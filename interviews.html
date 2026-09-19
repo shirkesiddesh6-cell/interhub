@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Interviews | PuneIntern</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="employer-page">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark employer-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand d-flex align-items-center gap-2"
+           href="home.html">
+
+            <span class="employer-brand-icon">
+
+                <i class="bi bi-briefcase-fill"></i>
+
+            </span>
+
+            <span>
+
+                <strong>
+                    Pune<span>Intern</span>
+                </strong>
+
+                <small class="d-block">
+                    Internship & Placement Portal
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#nav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="nav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="for_employers.html">
+
+                        Employers
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="explore_student.html">
+
+                        Explore Students
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="view_application.html">
+
+                        Applications
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                       href="interviews.html">
+
+                        Interviews
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item ms-lg-3">
+
+                    <a href="loginpage.html"
+                       class="btn btn-outline-light btn-sm px-4">
+
+                        Login
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HEADER -->
+
+<section class="employer-page-header">
+
+    <div class="container">
+
+        <span class="employer-badge">
+
+            <i class="bi bi-calendar-check me-1"></i>
+
+            Interview Management
+
+        </span>
+
+
+        <h1>
+
+            Manage <span>Interviews</span>
+
+        </h1>
+
+
+        <p>
+
+            Schedule interviews, manage upcoming meetings
+            and keep track of your hiring process.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- MAIN -->
+
+<section class="container py-5">
+
+
+    <!-- STATS -->
+
+    <div class="row g-3 mb-4">
+
+
+        <div class="col-md-3">
+
+            <div class="interview-stat">
+
+                <i class="bi bi-calendar-event"></i>
+
+                <strong>09</strong>
+
+                <span>
+                    Upcoming
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="interview-stat">
+
+                <i class="bi bi-camera-video"></i>
+
+                <strong>06</strong>
+
+                <span>
+                    Online
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="interview-stat">
+
+                <i class="bi bi-check-circle"></i>
+
+                <strong>14</strong>
+
+                <span>
+                    Completed
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="interview-stat">
+
+                <i class="bi bi-hourglass-split"></i>
+
+                <strong>03</strong>
+
+                <span>
+                    Awaiting Confirmation
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HEADER -->
+
+    <div class="interview-heading">
+
+        <div>
+
+            <h4>
+                Upcoming Interviews
+            </h4>
+
+            <p>
+                Your scheduled candidate meetings.
+            </p>
+
+        </div>
+
+
+        <button
+            class="btn schedule-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#scheduleModal">
+
+            <i class="bi bi-plus-circle me-2"></i>
+
+            Schedule Interview
+
+        </button>
+
+    </div>
+
+
+
+    <!-- INTERVIEW CARD 1 -->
+
+    <div class="interview-card">
+
+
+        <div class="date-box">
+
+            <span>
+                AUG
+            </span>
+
+            <strong>
+                30
+            </strong>
+
+            <small>
+                2026
+            </small>
+
+        </div>
+
+
+        <div class="interview-person">
+
+            <div class="candidate-avatar">
+                RP
+            </div>
+
+
+            <div>
+
+                <h5>
+                    Riya Patil
+                </h5>
+
+                <p>
+                    Python Developer Intern
+                </p>
+
+                <small>
+                    <i class="bi bi-building"></i>
+                    DataBridge Technologies
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="interview-time">
+
+            <strong>
+                11:00 AM
+            </strong>
+
+            <span>
+                30 minutes
+            </span>
+
+        </div>
+
+
+        <div class="interview-mode">
+
+            <span>
+                <i class="bi bi-camera-video-fill"></i>
+                Online
+            </span>
+
+            <small>
+                Google Meet
+            </small>
+
+        </div>
+
+
+        <div>
+
+            <span class="confirmed-badge">
+                Confirmed
+            </span>
+
+        </div>
+
+
+        <div class="interview-actions">
+
+            <button class="btn interview-action-btn">
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- INTERVIEW CARD 2 -->
+
+    <div class="interview-card">
+
+
+        <div class="date-box green-date">
+
+            <span>
+                SEP
+            </span>
+
+            <strong>
+                02
+            </strong>
+
+            <small>
+                2026
+            </small>
+
+        </div>
+
+
+        <div class="interview-person">
+
+            <div class="candidate-avatar green-avatar">
+                AS
+            </div>
+
+
+            <div>
+
+                <h5>
+                    Aditya Sharma
+                </h5>
+
+                <p>
+                    Frontend Developer Intern
+                </p>
+
+                <small>
+                    <i class="bi bi-building"></i>
+                    TechNova Solutions
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="interview-time">
+
+            <strong>
+                02:30 PM
+            </strong>
+
+            <span>
+                45 minutes
+            </span>
+
+        </div>
+
+
+        <div class="interview-mode">
+
+            <span>
+                <i class="bi bi-building"></i>
+                On-site
+            </span>
+
+            <small>
+                Pune Office
+            </small>
+
+        </div>
+
+
+        <div>
+
+            <span class="pending-badge">
+                Pending
+            </span>
+
+        </div>
+
+
+        <div class="interview-actions">
+
+            <button class="btn interview-action-btn">
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- INTERVIEW CARD 3 -->
+
+    <div class="interview-card">
+
+
+        <div class="date-box wine-date">
+
+            <span>
+                SEP
+            </span>
+
+            <strong>
+                04
+            </strong>
+
+            <small>
+                2026
+            </small>
+
+        </div>
+
+
+        <div class="interview-person">
+
+            <div class="candidate-avatar wine-avatar">
+                AK
+            </div>
+
+
+            <div>
+
+                <h5>
+                    Amit Kulkarni
+                </h5>
+
+                <p>
+                    Java Developer Intern
+                </p>
+
+                <small>
+                    <i class="bi bi-building"></i>
+                    CodeCraft Systems
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="interview-time">
+
+            <strong>
+                04:00 PM
+            </strong>
+
+            <span>
+                30 minutes
+            </span>
+
+        </div>
+
+
+        <div class="interview-mode">
+
+            <span>
+                <i class="bi bi-camera-video-fill"></i>
+                Online
+            </span>
+
+            <small>
+                Microsoft Teams
+            </small>
+
+        </div>
+
+
+        <div>
+
+            <span class="confirmed-badge">
+                Confirmed
+            </span>
+
+        </div>
+
+
+        <div class="interview-actions">
+
+            <button class="btn interview-action-btn">
+
+                <i class="bi bi-three-dots"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SCHEDULE MODAL
+===================================================== -->
+
+<div class="modal fade"
+     id="scheduleModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="bi bi-calendar-plus me-2"></i>
+
+                    Schedule Interview
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Candidate
+                    </label>
+
+                    <select class="form-select">
+
+                        <option>
+                            Select Candidate
+                        </option>
+
+                        <option>
+                            Riya Patil
+                        </option>
+
+                        <option>
+                            Aditya Sharma
+                        </option>
+
+                        <option>
+                            Amit Kulkarni
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Internship
+                    </label>
+
+                    <select class="form-select">
+
+                        <option>
+                            Frontend Developer Intern
+                        </option>
+
+                        <option>
+                            Python Developer Intern
+                        </option>
+
+                        <option>
+                            Java Developer Intern
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="row g-3">
+
+                    <div class="col-6">
+
+                        <label class="form-label">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            class="form-control">
+
+                    </div>
+
+
+                    <div class="col-6">
+
+                        <label class="form-label">
+                            Time
+                        </label>
+
+                        <input
+                            type="time"
+                            class="form-control">
+
+                    </div>
+
+                </div>
+
+
+                <div class="mb-3 mt-3">
+
+                    <label class="form-label">
+                        Interview Mode
+                    </label>
+
+                    <select class="form-select">
+
+                        <option>
+                            Online - Google Meet
+                        </option>
+
+                        <option>
+                            Online - Microsoft Teams
+                        </option>
+
+                        <option>
+                            On-site
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Meeting / Location Details
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter meeting link or office location">
+
+                </div>
+
+
+                <div>
+
+                    <label class="form-label">
+                        Message to Candidate
+                    </label>
+
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Add instructions for the candidate...">
+                    </textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    class="btn schedule-btn"
+                    onclick="scheduleInterview()">
+
+                    Schedule Interview
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<footer class="employer-footer">
+
+    <div class="container text-center">
+
+        <h5>
+
+            <i class="bi bi-briefcase-fill me-2"></i>
+
+            PuneIntern
+
+        </h5>
+
+        <small>
+            Employer Interview Management
+        </small>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+function scheduleInterview() {
+
+    alert(
+        "Interview scheduled successfully!"
+    );
+
+}
+
+</script>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>

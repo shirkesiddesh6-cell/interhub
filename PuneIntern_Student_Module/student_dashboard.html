@@ -1,0 +1,1250 @@
+```html
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <title>PuneIntern | Student Dashboard</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <!-- Student Dashboard CSS -->
+    <link rel="stylesheet" href="student.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        Pune<span>Intern</span>
+    </div>
+
+
+    <!-- Student Information -->
+
+    <div class="student-mini">
+
+        <div class="student-avatar">
+            SG
+        </div>
+
+        <div>
+
+            <h6 id="studentName">
+                Student
+            </h6>
+
+            <small>
+                Student Account
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="sidebar-menu">
+
+        <a
+            href="student_dashboard.html"
+            class="active">
+
+            <i class="bi bi-grid-1x2-fill"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="student_find_internships.html">
+
+            <i class="bi bi-search"></i>
+
+            Find Internships
+
+        </a>
+
+
+        <a href="student_my_applications.html">
+
+            <i class="bi bi-file-earmark-person"></i>
+
+            My Applications
+
+        </a>
+
+
+        <a href="student_shortlisted.html">
+
+            <i class="bi bi-star"></i>
+
+            Shortlisted
+
+        </a>
+
+
+        <a href="student_interviews.html">
+
+            <i class="bi bi-calendar2-check"></i>
+
+            Interviews
+
+        </a>
+
+
+        <a href="student_saved_internships.html">
+
+            <i class="bi bi-bookmark"></i>
+
+            Saved Internships
+
+        </a>
+
+
+        <a href="student_my_internships.html">
+
+            <i class="bi bi-briefcase"></i>
+
+            My Internships
+
+        </a>
+
+
+        <a href="student_profile.html">
+
+            <i class="bi bi-person"></i>
+
+            My Profile
+
+        </a>
+
+
+        <a href="student_resume.html">
+
+            <i class="bi bi-file-earmark-pdf"></i>
+
+            My Resume
+
+        </a>
+
+
+        <a href="student_settings.html">
+
+            <i class="bi bi-gear"></i>
+
+            Settings
+
+        </a>
+
+    </nav>
+
+
+    <!-- Logout -->
+
+    <div class="logout-link">
+
+        <a href="student_login.html">
+
+            <i class="bi bi-box-arrow-left"></i>
+
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================== -->
+
+<main class="main">
+
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+    <header class="topbar">
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu">
+
+            <i class="bi bi-list"></i>
+
+        </button>
+
+
+        <div></div>
+
+
+        <div class="d-flex align-items-center gap-3">
+
+
+            <!-- Notification -->
+
+            <button
+                class="btn border rounded-circle position-relative"
+                style="width:42px;height:42px">
+
+                <i class="bi bi-bell"></i>
+
+                <span
+                    style="
+                        width:8px;
+                        height:8px;
+                        border-radius:50%;
+                        background:var(--orange);
+                        position:absolute;
+                        right:7px;
+                        top:7px;
+                    ">
+                </span>
+
+            </button>
+
+
+            <!-- Student Name -->
+
+            <div class="d-none d-md-block">
+
+                <strong id="studentNameTop">
+                    Student
+                </strong>
+
+                <small class="text-muted d-block">
+                    Student Portal
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PAGE CONTENT
+    ====================================================== -->
+
+    <section class="content">
+
+
+        <!-- Welcome Section -->
+
+        <div class="row align-items-center mb-4">
+
+            <div class="col">
+
+                <div class="page-title">
+
+                    <h2 id="welcomeMessage">
+                        Welcome back, Student 👋
+                    </h2>
+
+                    <p>
+                        Find the right internship and take the next step
+                        in your career.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-auto">
+
+                <a
+                    href="student_find_internships.html"
+                    class="action-btn">
+
+                    <i class="bi bi-search"></i>
+
+                    Find Internship
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <div
+            class="row g-3 mb-4"
+            id="stats">
+        </div>
+
+
+
+        <!-- =================================================
+             RECOMMENDATIONS + APPLICATION PROGRESS
+        ================================================== -->
+
+        <div class="row g-4 mb-4">
+
+
+            <!-- Recommended Internships -->
+
+            <div class="col-xl-8">
+
+                <div class="card">
+
+                    <div class="card-head">
+
+                        <h5>
+                            Recommended For You
+                        </h5>
+
+
+                        <a
+                            href="student_find_internships.html"
+                            class="text-warning text-decoration-none small fw-semibold">
+
+                            Explore All →
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="p-3">
+
+                        <div
+                            class="row g-3"
+                            id="recommend">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Application Progress -->
+
+            <div class="col-xl-4">
+
+                <div class="card h-100">
+
+                    <div class="card-head">
+
+                        <h5>
+                            Application Progress
+                        </h5>
+
+                    </div>
+
+
+                    <div
+                        class="card-body-custom"
+                        id="progress">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RECENT APPLICATIONS + INTERVIEWS
+        ================================================== -->
+
+        <div class="row g-4">
+
+
+            <!-- Recent Applications -->
+
+            <div class="col-lg-7">
+
+                <div class="card">
+
+                    <div class="card-head">
+
+                        <h5>
+                            Recent Applications
+                        </h5>
+
+
+                        <a
+                            href="student_my_applications.html"
+                            class="text-warning text-decoration-none small fw-semibold">
+
+                            View All →
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="table mb-0">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Company
+                                    </th>
+
+                                    <th>
+                                        Internship
+                                    </th>
+
+                                    <th>
+                                        Applied
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="apps">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Upcoming Interviews -->
+
+            <div class="col-lg-5">
+
+                <div class="card">
+
+                    <div class="card-head">
+
+                        <h5>
+                            Upcoming Interviews
+                        </h5>
+
+
+                        <a
+                            href="student_interviews.html"
+                            class="text-warning text-decoration-none small fw-semibold">
+
+                            View All →
+
+                        </a>
+
+                    </div>
+
+
+                    <div id="interviews">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QUICK ACTIONS
+        ================================================== -->
+
+        <div class="card mt-4">
+
+            <div class="card-head">
+
+                <h5>
+                    Quick Actions
+                </h5>
+
+            </div>
+
+
+            <div class="p-3">
+
+                <div class="row g-3">
+
+
+                    <!-- Find Internships -->
+
+                    <div class="col-6 col-lg-3">
+
+                        <a
+                            class="quick"
+                            href="student_find_internships.html">
+
+                            <i class="bi bi-search"></i>
+
+                            <h6>
+                                Find Internships
+                            </h6>
+
+                            <p>
+                                Discover new opportunities
+                            </p>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- Applications -->
+
+                    <div class="col-6 col-lg-3">
+
+                        <a
+                            class="quick"
+                            href="student_my_applications.html">
+
+                            <i class="bi bi-file-earmark-text"></i>
+
+                            <h6>
+                                Applications
+                            </h6>
+
+                            <p>
+                                Track your applications
+                            </p>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- Resume -->
+
+                    <div class="col-6 col-lg-3">
+
+                        <a
+                            class="quick"
+                            href="student_resume.html">
+
+                            <i class="bi bi-file-earmark-pdf"></i>
+
+                            <h6>
+                                Update Resume
+                            </h6>
+
+                            <p>
+                                Keep your profile ready
+                            </p>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- Profile -->
+
+                    <div class="col-6 col-lg-3">
+
+                        <a
+                            class="quick"
+                            href="student_profile.html">
+
+                            <i class="bi bi-person"></i>
+
+                            <h6>
+                                Complete Profile
+                            </h6>
+
+                            <p>
+                                Improve your visibility
+                            </p>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================== -->
+
+<script>
+
+
+/* ---------------------------------------------------------
+   LOAD LOGGED-IN STUDENT
+--------------------------------------------------------- */
+
+const student = JSON.parse(
+    localStorage.getItem("loggedInStudent")
+);
+
+
+if (student) {
+
+    const fullName =
+        `${student.firstName} ${student.lastName}`;
+
+
+    document.getElementById("studentName").textContent =
+        fullName;
+
+
+    document.getElementById("studentNameTop").textContent =
+        fullName;
+
+
+    document.getElementById("welcomeMessage").textContent =
+        `Welcome back, ${student.firstName} 👋`;
+
+}
+
+
+
+/* ---------------------------------------------------------
+   MOBILE SIDEBAR
+--------------------------------------------------------- */
+
+document.getElementById("mobileMenu").onclick = () => {
+
+    document
+        .getElementById("sidebar")
+        .classList
+        .toggle("show");
+
+};
+
+
+
+/* ---------------------------------------------------------
+   DASHBOARD APPLICATION DATA
+--------------------------------------------------------- */
+
+async function loadApplications() {
+
+    if (!student) return;
+
+
+    try {
+
+        const response = await fetch(
+            `/api/applications/student/${student.id}`
+        );
+
+
+        const data = await response.json();
+
+
+        if (!data.success) {
+
+            console.error(
+                "Failed to load applications"
+            );
+
+            return;
+
+        }
+
+
+        const applications =
+            data.applications || [];
+
+
+
+        /* =================================================
+           COUNT APPLICATION STATUSES
+        ================================================= */
+
+        const totalApplications =
+            applications.length;
+
+
+        const shortlistedCount =
+            applications.filter(
+                item => item.status === "Shortlisted"
+            ).length;
+
+
+        const interviewCount =
+            applications.filter(
+                item => item.status === "Interview"
+            ).length;
+
+
+        const internshipCount =
+            applications.filter(
+                item =>
+                    item.status === "Hired" ||
+                    item.status === "Accepted"
+            ).length;
+
+
+
+        /* =================================================
+           DASHBOARD STATISTICS
+        ================================================= */
+
+        const statsData = [
+
+            [
+                totalApplications.toString(),
+                "Applications",
+                "bi-file-earmark-text",
+                "orange"
+            ],
+
+            [
+                shortlistedCount.toString(),
+                "Shortlisted",
+                "bi-star",
+                "green"
+            ],
+
+            [
+                interviewCount.toString(),
+                "Interviews",
+                "bi-calendar2-check",
+                "navy"
+            ],
+
+            [
+                internshipCount.toString(),
+                "Internship",
+                "bi-briefcase",
+                "wine"
+            ]
+
+        ];
+
+
+        document.getElementById("stats").innerHTML =
+            statsData
+                .map(item => `
+
+                    <div class="col-sm-6 col-xl-3">
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon ${item[3]}">
+
+                                <i class="bi ${item[2]}"></i>
+
+                            </div>
+
+                            <h3>
+                                ${item[0]}
+                            </h3>
+
+                            <p>
+                                ${item[1]}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                `)
+                .join("");
+
+
+
+        /* =================================================
+           APPLICATION PROGRESS
+        ================================================= */
+
+        const appliedCount =
+            applications.filter(
+                item => item.status === "Applied"
+            ).length;
+
+
+        const underReviewCount =
+            applications.filter(
+                item => item.status === "Under Review"
+            ).length;
+
+
+        const progressData = [
+
+            [
+                "Applied",
+                appliedCount
+            ],
+
+            [
+                "Under Review",
+                underReviewCount
+            ],
+
+            [
+                "Shortlisted",
+                shortlistedCount
+            ],
+
+            [
+                "Interview",
+                interviewCount
+            ]
+
+        ];
+
+
+        document.getElementById("progress").innerHTML =
+            progressData
+                .map(item => {
+
+                    const percentage =
+                        totalApplications > 0
+                            ? Math.round(
+                                (item[1] /
+                                    totalApplications) *
+                                100
+                            )
+                            : 0;
+
+
+                    let progressClass =
+                        "bg-orange";
+
+
+                    if (item[0] === "Applied") {
+
+                        progressClass =
+                            "bg-navy";
+
+                    }
+
+                    else if (
+                        item[0] === "Shortlisted"
+                    ) {
+
+                        progressClass =
+                            "bg-green";
+
+                    }
+
+                    else if (
+                        item[0] === "Interview"
+                    ) {
+
+                        progressClass =
+                            "bg-wine";
+
+                    }
+
+
+                    return `
+
+                        <div class="mb-4">
+
+                            <div
+                                class="d-flex justify-content-between small mb-1">
+
+                                <span>
+                                    ${item[0]}
+                                </span>
+
+                                <strong>
+                                    ${item[1]}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress">
+
+                                <div
+                                    class="progress-bar ${progressClass}"
+                                    style="width:${percentage}%">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                })
+                .join("");
+
+
+
+        /* =================================================
+           RECENT APPLICATIONS
+        ================================================= */
+
+        const recentApplications =
+            applications.slice(0, 4);
+
+
+        if (
+            recentApplications.length === 0
+        ) {
+
+            document.getElementById("apps").innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="4"
+                        class="text-center text-muted py-4">
+
+                        No applications yet.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+
+        else {
+
+            document.getElementById("apps").innerHTML =
+
+                recentApplications
+                    .map(item => {
+
+                        const status =
+                            item.status || "Applied";
+
+
+                        const statusClass =
+                            status === "Shortlisted"
+
+                                ? "status-green"
+
+                                : status === "Interview"
+
+                                    ? "status-wine"
+
+                                    : status === "Applied"
+
+                                        ? "status-navy"
+
+                                        : "status-orange";
+
+
+                        let appliedDate = "-";
+
+
+                        if (item.applied_at) {
+
+                            const date =
+                                new Date(
+                                    item.applied_at.replace(
+                                        " ",
+                                        "T"
+                                    )
+                                );
+
+
+                            if (
+                                !isNaN(
+                                    date.getTime()
+                                )
+                            ) {
+
+                                appliedDate =
+                                    date.toLocaleDateString(
+                                        "en-IN",
+                                        {
+                                            day: "2-digit",
+                                            month: "short"
+                                        }
+                                    );
+
+                            }
+
+                        }
+
+
+                        return `
+
+                            <tr>
+
+                                <td>
+
+                                    <strong>
+                                        ${item.company || "Company"}
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+
+                                    ${item.title || "Internship"}
+
+                                </td>
+
+
+                                <td class="small">
+
+                                    ${appliedDate}
+
+                                </td>
+
+
+                                <td>
+
+                                    <span
+                                        class="status ${statusClass}">
+
+                                        ${status}
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        `;
+
+                    })
+                    .join("");
+
+        }
+
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "Dashboard applications error:",
+            error
+        );
+
+    }
+
+}
+
+
+
+/* ---------------------------------------------------------
+   START DASHBOARD APPLICATION DATA
+--------------------------------------------------------- */
+
+loadApplications();
+
+
+
+/* ---------------------------------------------------------
+   RECOMMENDED INTERNSHIPS
+--------------------------------------------------------- */
+
+const recommendations = [
+
+    [
+        "TechNova Solutions",
+        "Frontend Developer Intern",
+        "Pune • Hybrid",
+        "₹12,000/month",
+        "TN"
+    ],
+
+    [
+        "CloudByte Systems",
+        "Python Developer Intern",
+        "Remote",
+        "₹15,000/month",
+        "CB"
+    ]
+
+];
+
+
+document.getElementById("recommend").innerHTML =
+
+    recommendations
+        .map(item => `
+
+            <div class="col-md-6">
+
+                <div class="internship-card">
+
+                    <div
+                        class="d-flex align-items-center gap-3">
+
+                        <div class="company-logo">
+                            ${item[4]}
+                        </div>
+
+
+                        <div>
+
+                            <h6
+                                class="mb-1"
+                                style="color:var(--navy)">
+
+                                ${item[0]}
+
+                            </h6>
+
+
+                            <small class="text-muted">
+
+                                ${item[1]}
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="small mt-3">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        ${item[2]}
+
+                    </div>
+
+
+                    <div class="small mt-2">
+
+                        <i class="bi bi-cash"></i>
+
+                        ${item[3]}
+
+                    </div>
+
+
+                    <a
+                        href="student_find_internships.html"
+                        class="btn btn-warning btn-sm w-100 mt-3">
+
+                        View Internship
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        `)
+        .join("");
+
+
+
+/* ---------------------------------------------------------
+   UPCOMING INTERVIEWS
+--------------------------------------------------------- */
+
+const interviewsData = [
+
+    [
+        "TechNova Solutions",
+        "Frontend Developer Intern",
+        "Tomorrow • 11:00 AM"
+    ],
+
+    [
+        "DesignHub",
+        "UI/UX Design Intern",
+        "30 Aug • 12:30 PM"
+    ]
+
+];
+
+
+document.getElementById("interviews").innerHTML =
+
+    interviewsData
+        .map(item => `
+
+            <div class="p-3 border-bottom">
+
+                <strong>
+                    ${item[0]}
+                </strong>
+
+                <div class="small text-muted mt-1">
+                    ${item[1]}
+                </div>
+
+                <div class="small mt-2">
+                    <i class="bi bi-calendar2-check"></i>
+                    ${item[2]}
+                </div>
+
+            </div>
+
+        `)
+        .join("");
+
+</script>
+
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+
+</html>
+```

@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f5;
+    color: #035480;
+}
+
+/* Navbar */
+
+.navbar-brand {
+    color: #342f93;
+}
+
+.navbar-brand small {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #34486d;
+    margin: 0 8px;
+}
+
+.nav-link:hover {
+    color: #2d2f8a;
+}
+
+
+/* Button */
+
+.btn-brown {
+    background: #2f3685;
+    color: white;
+    border-radius: 8px;
+}
+
+.btn-brown:hover {
+    background: #27306c;
+    color: white;
+}
+
+
+/* About */
+
+h1 {
+    font-size: 55px;
+    font-weight: bold;
+    color: #2a2e71;
+}
+
+h2 {
+    color: #2a3575;
+    font-weight: bold;
+}
+
+h3 {
+    color: #273470;
+}
+
+p {
+    line-height: 1.7;
+}
+
+
+/* Values */
+
+.values-box {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px #ddd;
+}
+
+.value {
+    padding: 15px;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.value h5 {
+    color: #231f63;
+}
+
+
+/* Impact */
+
+.impact {
+    background:white;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.impact h2 {
+    color: #2a467c;
+    display: block;
+}
+
+
+/* Images */
+
+img {
+    width: 70%;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+/* Footer */
+
+footer {
+    background: #2e3282;
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+}

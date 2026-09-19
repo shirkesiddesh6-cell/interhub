@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PuneIntern | Companies</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="college.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+<div class="brand">Pune<span>Intern</span></div>
+<div class="college-mini"><div class="college-avatar">G</div><div><h6>Garware College</h6><small>College Account</small></div></div>
+<nav class="sidebar-menu"><a href="college_dashboard.html" class=""><i class="bi bi-grid-1x2-fill"></i>Dashboard</a><a href="college_students.html" class=""><i class="bi bi-people"></i>Students</a><a href="college_internships.html" class=""><i class="bi bi-briefcase"></i>Internships</a><a href="college_applications.html" class=""><i class="bi bi-file-earmark-person"></i>Applications</a><a href="college_companies.html" class="active"><i class="bi bi-building"></i>Companies</a><a href="college_placements.html" class=""><i class="bi bi-graph-up-arrow"></i>Placement Overview</a><a href="college_profile.html" class=""><i class="bi bi-person-badge"></i>College Profile</a><a href="college_settings.html" class=""><i class="bi bi-gear"></i>Settings</a></nav>
+<div class="logout-link"><a href="college_login.html"><i class="bi bi-box-arrow-left"></i> Logout</a></div>
+</aside>
+<main class="main">
+<header class="topbar">
+<button class="mobile-menu" id="mobileMenu"><i class="bi bi-list"></i></button><div></div>
+<div class="d-flex align-items-center gap-3"><button class="notification"><i class="bi bi-bell"></i><span class="dot"></span></button>
+<div class="d-none d-md-block"><strong>MES Abasaheb Garware College</strong><small class="text-muted d-block">College Portal</small></div></div>
+</header>
+<section class="content"><div class="page-title mb-4"><h2>Partner Companies</h2><p>Explore companies offering internship opportunities to your students.</p></div>
+<div class="filter-box mb-4"><div class="row g-2"><div class="col-lg-6"><input id="q" class="form-control" placeholder="Search company or industry"></div><div class="col-md-6 col-lg-3"><select id="industry" class="form-select"><option value="">All Industries</option><option>Technology</option><option>Data</option><option>Design</option><option>Finance</option></select></div><div class="col-md-6 col-lg-3"><select id="loc" class="form-select"><option value="">All Locations</option><option>Pune</option><option>Mumbai</option><option>Remote</option></select></div></div></div><div class="row g-4" id="cards"></div></section>
+</main>
+<script>
+document.getElementById("mobileMenu").onclick=()=>document.getElementById("sidebar").classList.toggle("show");
+document.addEventListener("click",e=>{const s=document.getElementById("sidebar"),m=document.getElementById("mobileMenu");if(innerWidth<=991&&!s.contains(e.target)&&!m.contains(e.target))s.classList.remove("show")});
+let cs=[["TechNova Solutions","Technology","Pune",8,32,"TN"],["DataCore Technologies","Data","Mumbai",6,24,"DC"],["CodeBridge Technologies","Technology","Pune",5,19,"CB"],["Creative Studio","Design","Remote",4,14,"CS"],["FinEdge Labs","Finance","Pune",3,8,"FL"],["CloudWorks","Technology","Remote",7,27,"CW"]];
+function render(){let a=cs.filter(x=>(!q.value||x.join(" ").toLowerCase().includes(q.value.toLowerCase()))&&(!industry.value||x[1]==industry.value)&&(!loc.value||x[2]==loc.value));cards.innerHTML=a.map(x=>`<div class="col-md-6 col-xl-4"><div class="card h-100"><div class="card-body-custom"><div class="d-flex align-items-center gap-3"><div class="profile-avatar" style="width:55px;height:55px;border-radius:12px;font-size:17px">${x[5]}</div><div><h5 class="mb-1" style="color:var(--navy)">${x[0]}</h5><small class="text-muted">${x[1]} • ${x[2]}</small></div></div><hr><div class="d-flex justify-content-between small mb-2"><span>Active internships</span><strong>${x[3]}</strong></div><div class="d-flex justify-content-between small mb-3"><span>Applications</span><strong>${x[4]}</strong></div><button class="btn btn-outline-success w-100">View Company</button></div></div></div>`).join("")||'<div class="col-12"><div class="empty">No companies found.</div></div>'}
+["q","industry","loc"].forEach(id=>document.getElementById(id).addEventListener("input",render));render();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>

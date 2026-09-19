@@ -1,0 +1,12 @@
+node_modules/
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+.env
+.env.*
+*.pem
+npm-debug.log*
+k8s/postgres-secret.yaml
+backend/migrate-to-postgres.js
+backend/server-postgres-backup.js

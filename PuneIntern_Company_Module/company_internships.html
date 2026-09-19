@@ -1,0 +1,710 @@
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>PuneIntern | My Internships</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Company CSS -->
+    <link rel="stylesheet" href="company.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="brand">
+            Pune<span>Intern</span>
+        </div>
+
+
+        <div class="company-mini">
+
+            <div class="company-avatar">
+                TN
+            </div>
+
+            <div>
+
+                <h6>
+                    TechNova Solutions
+                </h6>
+
+                <small>
+                    Company Account
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="company_dashboard.html">
+
+                <i class="bi bi-grid-1x2-fill"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="company_post_internship.html">
+
+                <i class="bi bi-plus-square"></i>
+
+                Post Internship
+
+            </a>
+
+
+            <a
+                href="company_internships.html"
+                class="active"
+            >
+
+                <i class="bi bi-briefcase"></i>
+
+                My Internships
+
+            </a>
+
+
+            <a href="company_applications.html">
+
+                <i class="bi bi-file-earmark-person"></i>
+
+                Applications
+
+            </a>
+
+
+            <a href="company_shortlisted.html">
+
+                <i class="bi bi-star"></i>
+
+                Shortlisted
+
+            </a>
+
+
+            <a href="company_interviews.html">
+
+                <i class="bi bi-calendar2-check"></i>
+
+                Interviews
+
+            </a>
+
+
+            <a href="company_hired.html">
+
+                <i class="bi bi-person-check"></i>
+
+                Hired Interns
+
+            </a>
+
+
+            <a href="company_profile.html">
+
+                <i class="bi bi-building"></i>
+
+                Company Profile
+
+            </a>
+
+
+            <a href="company_settings.html">
+
+                <i class="bi bi-gear"></i>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+
+        <div class="logout-link">
+
+            <a href="company_login.html">
+
+                <i class="bi bi-box-arrow-left"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div></div>
+
+
+            <div class="d-flex align-items-center gap-3">
+
+                <button class="notification">
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="dot"></span>
+
+                </button>
+
+
+                <div class="d-none d-md-block">
+
+                    <strong>
+                        TechNova Solutions
+                    </strong>
+
+                    <small class="text-muted d-block">
+                        Company Portal
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             PAGE CONTENT
+        ========================== -->
+
+        <section class="content">
+
+
+            <div class="row align-items-center mb-4">
+
+
+                <div class="col">
+
+                    <div class="page-title">
+
+                        <h2>
+                            My Internships
+                        </h2>
+
+                        <p>
+                            Manage all internship opportunities posted by your company.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-auto">
+
+                    <a
+                        href="company_post_internship.html"
+                        class="action-btn"
+                    >
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        Post Internship
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 FILTERS
+            ========================== -->
+
+            <div class="filter-box mb-4">
+
+                <div class="row g-2">
+
+
+                    <div class="col-lg-6">
+
+                        <input
+                            id="q"
+                            class="form-control"
+                            placeholder="Search internship title"
+                        >
+
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <select
+                            id="status"
+                            class="form-select"
+                        >
+
+                            <option value="">
+                                All Status
+                            </option>
+
+                            <option value="Active">
+                                Active
+                            </option>
+
+                            <option value="Draft">
+                                Draft
+                            </option>
+
+                            <option value="Closed">
+                                Closed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <select
+                            id="mode"
+                            class="form-select"
+                        >
+
+                            <option value="">
+                                All Work Modes
+                            </option>
+
+                            <option value="Remote">
+                                Remote
+                            </option>
+
+                            <option value="Hybrid">
+                                Hybrid
+                            </option>
+
+                            <option value="On-site">
+                                On-site
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 INTERNSHIP CARDS
+            ========================== -->
+
+            <div
+                class="row g-4"
+                id="cards"
+            ></div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        // =========================
+        // MOBILE MENU
+        // =========================
+
+        document
+            .getElementById("mobileMenu")
+            .onclick = () => {
+
+                document
+                    .getElementById("sidebar")
+                    .classList
+                    .toggle("show");
+
+            };
+
+
+
+        // =========================
+        // VARIABLES
+        // =========================
+
+        let d = [];
+
+
+
+        // =========================
+        // LOAD INTERNSHIPS
+        // FROM BACKEND
+        // =========================
+
+        async function loadInternships() {
+
+            try {
+
+                const response = await fetch(
+                    "/api/internships"
+                );
+
+
+                const data =
+                    await response.json();
+
+
+                if (data.success) {
+
+                    d = data.internships.map(
+                        internship => [
+
+                            internship.title,
+
+                            "Technology",
+
+                            internship.location,
+
+                            internship.mode,
+
+                            internship.stipend,
+
+                            0,
+
+                            "Active"
+
+                        ]
+                    );
+
+
+                    render();
+
+                } else {
+
+                    alert(
+                        data.message ||
+                        "Unable to load internships."
+                    );
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Load internships error:",
+                    error
+                );
+
+
+                alert(
+                    "Unable to connect to backend."
+                );
+
+            }
+
+        }
+
+
+
+        // =========================
+        // RENDER INTERNSHIPS
+        // =========================
+
+        function render() {
+
+
+            const searchText =
+                document
+                    .getElementById("q")
+                    .value
+                    .toLowerCase();
+
+
+            const selectedStatus =
+                document
+                    .getElementById("status")
+                    .value;
+
+
+            const selectedMode =
+                document
+                    .getElementById("mode")
+                    .value;
+
+
+            const filtered =
+                d.filter(
+                    internship => (
+
+                        (
+                            !searchText ||
+                            internship
+                                .join(" ")
+                                .toLowerCase()
+                                .includes(searchText)
+                        )
+
+                        &&
+
+                        (
+                            !selectedStatus ||
+                            internship[6] === selectedStatus
+                        )
+
+                        &&
+
+                        (
+                            !selectedMode ||
+                            internship[3] === selectedMode
+                        )
+
+                    )
+                );
+
+
+
+            document
+                .getElementById("cards")
+                .innerHTML =
+
+                filtered.map(
+                    internship => `
+
+                        <div class="col-md-6 col-xl-4">
+
+                            <div class="card h-100">
+
+                                <div class="card-body-custom">
+
+
+                                    <div class="d-flex justify-content-between">
+
+                                        <div class="item-icon">
+
+                                            <i class="bi bi-briefcase"></i>
+
+                                        </div>
+
+
+                                        <span
+                                            class="status ${
+                                                internship[6] === "Active"
+                                                    ? "status-green"
+                                                    : internship[6] === "Draft"
+                                                        ? "status-orange"
+                                                        : "status-wine"
+                                            }"
+                                        >
+
+                                            ${internship[6]}
+
+                                        </span>
+
+                                    </div>
+
+
+
+                                    <h5
+                                        class="mt-3"
+                                        style="color:var(--navy)"
+                                    >
+
+                                        ${internship[0]}
+
+                                    </h5>
+
+
+
+                                    <p class="small text-muted">
+
+                                        ${internship[1]}
+
+                                    </p>
+
+
+
+                                    <div class="small mb-2">
+
+                                        <i class="bi bi-geo-alt"></i>
+
+                                        ${internship[2]}
+
+                                        •
+
+                                        ${internship[3]}
+
+                                    </div>
+
+
+
+                                    <div class="small mb-3">
+
+                                        <i class="bi bi-cash"></i>
+
+                                        ${internship[4]}
+
+                                        •
+
+                                        <i class="bi bi-people"></i>
+
+                                        ${internship[5]}
+
+                                        applications
+
+                                    </div>
+
+
+
+                                    <div class="d-flex gap-2">
+
+                                        <button
+                                            class="btn btn-sm btn-outline-warning flex-fill"
+                                        >
+
+                                            Edit
+
+                                        </button>
+
+
+                                        <button
+                                            class="btn btn-sm btn-outline-secondary flex-fill"
+                                        >
+
+                                            Manage
+
+                                        </button>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `
+                )
+                .join("");
+
+
+        }
+
+
+
+        // =========================
+        // FILTER EVENTS
+        // =========================
+
+        document
+            .getElementById("q")
+            .addEventListener(
+                "input",
+                render
+            );
+
+
+        document
+            .getElementById("status")
+            .addEventListener(
+                "change",
+                render
+            );
+
+
+        document
+            .getElementById("mode")
+            .addEventListener(
+                "change",
+                render
+            );
+
+
+
+        // =========================
+        // START
+        // =========================
+
+        loadInternships();
+
+
+    </script>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+
+</body>
+
+</html>
+```

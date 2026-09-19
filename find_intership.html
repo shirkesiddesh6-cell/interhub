@@ -1,0 +1,3282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Find Internships | PuneIntern</title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP 5
+    ====================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- =====================================================
+         CUSTOM CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           COLOR VARIABLES
+        ================================================= */
+
+        :root {
+
+            --navy: #0F172A;
+
+            --navy-light: #1E293B;
+
+            --orange: #F97316;
+
+            --orange-dark: #EA580C;
+
+            --green: #16A34A;
+
+            --green-light: #DCFCE7;
+
+            --wine: #7F1D1D;
+
+            --wine-light: #FCE7F3;
+
+            --background: #F8FAFC;
+
+            --border: #E2E8F0;
+
+            --muted: #64748B;
+
+        }
+
+
+        /* =================================================
+           BODY
+        ================================================= */
+
+        body {
+
+            margin: 0;
+
+            background: var(--background);
+
+            color: var(--navy);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+        }
+
+
+        /* =================================================
+           NAVBAR
+        ================================================= */
+
+        .main-navbar {
+
+            background: var(--navy);
+
+            min-height: 72px;
+
+            box-shadow:
+                0 2px 10px rgba(15, 23, 42, 0.12);
+
+        }
+
+
+        .navbar-brand {
+
+            color: white !important;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+        }
+
+
+        .navbar-brand span.brand-name {
+
+            color: var(--orange);
+
+        }
+
+
+        .brand-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: var(--orange);
+
+            color: white;
+
+            border-radius: 10px;
+
+            font-size: 20px;
+
+        }
+
+
+        .brand-subtitle {
+
+            display: block;
+
+            font-size: 10px;
+
+            color: #94A3B8;
+
+            font-weight: 400;
+
+        }
+
+
+        .navbar-nav .nav-link {
+
+            color: #CBD5E1 !important;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            padding: 10px 15px !important;
+
+        }
+
+
+        .navbar-nav .nav-link:hover,
+
+        .navbar-nav .nav-link.active {
+
+            color: white !important;
+
+        }
+
+
+        .navbar-nav .nav-link.active {
+
+            border-bottom: 2px solid var(--orange);
+
+        }
+
+
+        .profile-button {
+
+            background: white;
+
+            color: var(--navy);
+
+            border: none;
+
+            border-radius: 8px;
+
+            padding: 7px 12px;
+
+            font-weight: 600;
+
+            font-size: 13px;
+
+        }
+
+
+        .profile-avatar {
+
+            width: 30px;
+
+            height: 30px;
+
+            border-radius: 50%;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: var(--orange);
+
+            color: white;
+
+        }
+
+
+        /* =================================================
+           PAGE HEADER
+        ================================================= */
+
+        .page-header {
+
+            background: white;
+
+            border-bottom: 1px solid var(--border);
+
+            padding: 40px 0 35px;
+
+        }
+
+
+        .page-title {
+
+            font-size: clamp(30px, 4vw, 44px);
+
+            font-weight: 750;
+
+            letter-spacing: -1.2px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .page-title span {
+
+            color: var(--orange);
+
+        }
+
+
+        .page-description {
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            max-width: 650px;
+
+        }
+
+
+        .internship-count {
+
+            color: var(--green);
+
+            font-weight: 700;
+
+        }
+
+
+        /* =================================================
+           SEARCH AREA
+        ================================================= */
+
+        .search-wrapper {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            padding: 8px;
+
+            box-shadow:
+                0 8px 25px rgba(15, 23, 42, 0.07);
+
+        }
+
+
+        .search-input {
+
+            border: none !important;
+
+            box-shadow: none !important;
+
+            min-height: 50px;
+
+        }
+
+
+        .search-input::placeholder {
+
+            color: #94A3B8;
+
+        }
+
+
+        .search-button {
+
+            background: var(--orange);
+
+            color: white;
+
+            border: none;
+
+            border-radius: 9px;
+
+            padding: 0 28px;
+
+            font-weight: 600;
+
+        }
+
+
+        .search-button:hover {
+
+            background: var(--orange-dark);
+
+            color: white;
+
+        }
+
+
+        .location-select {
+
+            border: none;
+
+            border-left: 1px solid var(--border);
+
+            border-radius: 0;
+
+            box-shadow: none !important;
+
+            min-height: 50px;
+
+        }
+
+
+        /* =================================================
+           FILTER SIDEBAR
+        ================================================= */
+
+        .filter-card {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            position: sticky;
+
+            top: 90px;
+
+        }
+
+
+        .filter-header {
+
+            padding: 18px;
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .filter-header h5 {
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            margin: 0;
+
+        }
+
+
+        .clear-filter {
+
+            border: none;
+
+            background: transparent;
+
+            color: var(--orange);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+        }
+
+
+        .filter-section {
+
+            padding: 18px;
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .filter-section:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .filter-title {
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 13px;
+
+            color: var(--navy);
+
+        }
+
+
+        .form-check {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .form-check-label {
+
+            color: #475569;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+        }
+
+
+        .form-check-input {
+
+            cursor: pointer;
+
+        }
+
+
+        .form-check-input:checked {
+
+            background-color: var(--orange);
+
+            border-color: var(--orange);
+
+        }
+
+
+        /* =================================================
+           SORT BAR
+        ================================================= */
+
+        .results-bar {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .results-count {
+
+            font-size: 14px;
+
+            color: var(--muted);
+
+        }
+
+
+        .results-count strong {
+
+            color: var(--navy);
+
+        }
+
+
+        .sort-select {
+
+            width: 170px;
+
+            font-size: 13px;
+
+            border-color: var(--border);
+
+            box-shadow: none !important;
+
+        }
+
+
+        /* =================================================
+           INTERNSHIP CARD
+        ================================================= */
+
+        .internship-card {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            padding: 22px;
+
+            margin-bottom: 16px;
+
+            transition: all 0.25s ease;
+
+            position: relative;
+
+        }
+
+
+        .internship-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #CBD5E1;
+
+            box-shadow:
+                0 12px 30px rgba(15, 23, 42, 0.08);
+
+        }
+
+
+        .company-logo {
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .logo-orange {
+
+            background: #FFF7ED;
+
+            color: var(--orange);
+
+        }
+
+
+        .logo-green {
+
+            background: var(--green-light);
+
+            color: var(--green);
+
+        }
+
+
+        .logo-wine {
+
+            background: #FDECEC;
+
+            color: var(--wine);
+
+        }
+
+
+        .logo-blue {
+
+            background: #EFF6FF;
+
+            color: #2563EB;
+
+        }
+
+
+        .internship-title {
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            color: var(--navy);
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .company-name {
+
+            font-size: 13px;
+
+            color: var(--muted);
+
+        }
+
+
+        .verified {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 3px;
+
+            color: var(--green);
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =================================================
+           FEATURED BADGE
+        ================================================= */
+
+        .featured-badge {
+
+            position: absolute;
+
+            top: 20px;
+
+            right: 20px;
+
+            background: #FFF7ED;
+
+            color: var(--orange-dark);
+
+            border: 1px solid #FED7AA;
+
+            padding: 4px 9px;
+
+            border-radius: 20px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =================================================
+           SKILL BADGES
+        ================================================= */
+
+        .skill-badge {
+
+            display: inline-block;
+
+            background: #F1F5F9;
+
+            color: #475569;
+
+            border-radius: 5px;
+
+            padding: 5px 9px;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            margin-right: 5px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .skill-html {
+
+            background: #FFF7ED;
+
+            color: #C2410C;
+
+        }
+
+
+        .skill-css {
+
+            background: #EFF6FF;
+
+            color: #1D4ED8;
+
+        }
+
+
+        .skill-js {
+
+            background: #FEF9C3;
+
+            color: #854D0E;
+
+        }
+
+
+        .skill-python {
+
+            background: #DCFCE7;
+
+            color: #166534;
+
+        }
+
+
+        .skill-java {
+
+            background: #FCE7F3;
+
+            color: var(--wine);
+
+        }
+
+
+        /* =================================================
+           META INFORMATION
+        ================================================= */
+
+        .internship-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 18px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 15px;
+
+        }
+
+
+        .internship-meta span {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+        }
+
+
+        .internship-meta i {
+
+            color: var(--navy);
+
+        }
+
+
+        .stipend {
+
+            color: var(--green) !important;
+
+            font-weight: 700;
+
+        }
+
+
+        .stipend i {
+
+            color: var(--green);
+
+        }
+
+
+        /* =================================================
+           APPLY BUTTON
+        ================================================= */
+
+        .view-button {
+
+            border: 1px solid var(--orange);
+
+            color: var(--orange);
+
+            background: white;
+
+            border-radius: 8px;
+
+            padding: 9px 18px;
+
+            font-size: 12px;
+
+            font-weight: 650;
+
+            transition: 0.2s;
+
+        }
+
+
+        .view-button:hover {
+
+            background: var(--orange);
+
+            color: white;
+
+        }
+
+
+        /* =================================================
+           SAVE BUTTON
+        ================================================= */
+
+        .save-button {
+
+            width: 38px;
+
+            height: 38px;
+
+            border: 1px solid var(--border);
+
+            background: white;
+
+            color: var(--muted);
+
+            border-radius: 8px;
+
+        }
+
+
+        .save-button:hover,
+
+        .save-button.saved {
+
+            color: var(--wine);
+
+            border-color: #FCA5A5;
+
+            background: #FEF2F2;
+
+        }
+
+
+        /* =================================================
+           EMPTY RESULT
+        ================================================= */
+
+        #noResults {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+        }
+
+
+        #noResults i {
+
+            font-size: 45px;
+
+            color: #CBD5E1;
+
+        }
+
+
+        /* =================================================
+           PAGINATION
+        ================================================= */
+
+        .pagination .page-link {
+
+            color: var(--navy);
+
+            border-color: var(--border);
+
+            font-size: 13px;
+
+        }
+
+
+        .pagination .page-item.active .page-link {
+
+            background: var(--orange);
+
+            border-color: var(--orange);
+
+            color: white;
+
+        }
+
+
+        /* =================================================
+           FOOTER
+        ================================================= */
+
+        .main-footer {
+
+            background: var(--navy);
+
+            color: #94A3B8;
+
+            padding: 35px 0;
+
+            margin-top: 50px;
+
+        }
+
+
+        .footer-brand {
+
+            color: white;
+
+            font-weight: 700;
+
+            font-size: 18px;
+
+        }
+
+
+        .footer-brand span {
+
+            color: var(--orange);
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================= */
+
+        @media (max-width: 991px) {
+
+            .filter-card {
+
+                position: static;
+
+            }
+
+            .filter-mobile-button {
+
+                display: block !important;
+
+            }
+
+        }
+
+
+        @media (max-width: 767px) {
+
+            .search-wrapper {
+
+                padding: 10px;
+
+            }
+
+            .location-select {
+
+                border-left: none;
+
+                border-top: 1px solid var(--border);
+
+            }
+
+            .search-button {
+
+                min-height: 48px;
+
+                width: 100%;
+
+            }
+
+            .results-bar {
+
+                align-items: flex-start;
+
+                gap: 10px;
+
+            }
+
+            .internship-card {
+
+                padding: 17px;
+
+            }
+
+            .featured-badge {
+
+                position: static;
+
+                display: inline-block;
+
+                margin-bottom: 12px;
+
+            }
+
+            .card-actions {
+
+                margin-top: 18px;
+
+            }
+
+        }
+
+
+        .filter-mobile-button {
+
+            display: none;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<nav class="navbar navbar-expand-lg main-navbar navbar-dark">
+
+    <div class="container">
+
+        <!-- BRAND -->
+
+        <a class="navbar-brand d-flex align-items-center gap-2"
+           href="internships.html">
+
+            <span class="brand-icon">
+
+                <i class="bi bi-briefcase-fill"></i>
+
+            </span>
+
+
+            <span>
+
+                Pune<span class="brand-name">Intern</span>
+
+                <small class="brand-subtitle">
+
+                    Internship & Placement Portal
+
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <!-- MOBILE TOGGLE -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavbar">
+
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                       href="internships.html">
+
+                        <i class="bi bi-search me-1"></i>
+
+                        Internships
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="applications.html">
+
+                        <i class="bi bi-file-earmark-text me-1"></i>
+
+                        My Applications
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#">
+
+                        <i class="bi bi-bookmark me-1"></i>
+
+                        Saved
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+
+            <!-- PROFILE -->
+
+            <button
+                class="profile-button d-flex align-items-center gap-2">
+
+                <span class="profile-avatar">
+
+                    SG
+
+                </span>
+
+                <span class="d-none d-md-inline">
+
+                    Suraj
+
+                </span>
+
+                <i class="bi bi-chevron-down"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     PAGE HEADER
+====================================================== -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <h1 class="page-title">
+
+                    Find the internship
+                    that starts <span>your career.</span>
+
+                </h1>
+
+
+                <p class="page-description mb-0">
+
+                    Discover verified internship opportunities,
+                    connect with companies, and take the next
+                    step toward your career.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                <div class="internship-count">
+
+                    <i class="bi bi-briefcase-fill me-1"></i>
+
+                    2,500+ opportunities
+
+                </div>
+
+                <small class="text-muted">
+
+                    Updated regularly
+
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-wrapper mt-4">
+
+            <div class="row g-0 align-items-center">
+
+                <!-- SEARCH -->
+
+                <div class="col-lg-5">
+
+                    <div class="input-group">
+
+                        <span class="input-group-text bg-white border-0">
+
+                            <i class="bi bi-search text-muted"></i>
+
+                        </span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            class="form-control search-input"
+                            placeholder="Search role, company or skill...">
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="col-lg-3">
+
+                    <div class="input-group">
+
+                        <span class="input-group-text bg-white border-0">
+
+                            <i class="bi bi-geo-alt text-muted"></i>
+
+                        </span>
+
+                        <select
+                            id="locationFilter"
+                            class="form-select location-select">
+
+                            <option value="all">
+
+                                All locations
+
+                            </option>
+
+                            <option value="pune">
+
+                                Pune
+
+                            </option>
+
+                            <option value="mumbai">
+
+                                Mumbai
+
+                            </option>
+
+                            <option value="bangalore">
+
+                                Bangalore
+
+                            </option>
+
+                            <option value="hybrid">
+
+                                Hybrid
+
+                            </option>
+
+                            <option value="remote">
+
+                                Remote
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH BUTTON -->
+
+                <div class="col-lg-4 p-1">
+
+                    <button
+                        id="searchButton"
+                        class="btn search-button w-100">
+
+                        <i class="bi bi-search me-2"></i>
+
+                        Search Internships
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="container py-4">
+
+    <div class="row g-4">
+
+
+        <!-- =================================================
+             FILTER SIDEBAR
+        ================================================== -->
+
+        <div class="col-lg-3">
+
+
+            <!-- MOBILE FILTER BUTTON -->
+
+            <button
+                class="btn btn-outline-dark w-100 mb-3 filter-mobile-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#filterPanel">
+
+                <i class="bi bi-funnel me-2"></i>
+
+                Filters
+
+            </button>
+
+
+            <div
+                class="filter-card collapse show"
+                id="filterPanel">
+
+
+                <!-- FILTER HEADER -->
+
+                <div class="filter-header d-flex justify-content-between">
+
+                    <h5>
+
+                        <i class="bi bi-sliders me-2"></i>
+
+                        Filters
+
+                    </h5>
+
+
+                    <button
+                        id="clearFilters"
+                        class="clear-filter">
+
+                        Clear all
+
+                    </button>
+
+                </div>
+
+
+                <!-- WORK MODE -->
+
+                <div class="filter-section">
+
+                    <div class="filter-title">
+
+                        Work Mode
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input work-mode"
+                            type="checkbox"
+                            value="remote"
+                            id="remote">
+
+                        <label
+                            class="form-check-label"
+                            for="remote">
+
+                            Remote
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input work-mode"
+                            type="checkbox"
+                            value="hybrid"
+                            id="hybrid">
+
+                        <label
+                            class="form-check-label"
+                            for="hybrid">
+
+                            Hybrid
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input work-mode"
+                            type="checkbox"
+                            value="onsite"
+                            id="onsite">
+
+                        <label
+                            class="form-check-label"
+                            for="onsite">
+
+                            On-site
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STIPEND -->
+
+                <div class="filter-section">
+
+                    <div class="filter-title">
+
+                        Stipend
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input stipend-filter"
+                            type="radio"
+                            name="stipend"
+                            value="all"
+                            id="stipendAll"
+                            checked>
+
+                        <label
+                            class="form-check-label"
+                            for="stipendAll">
+
+                            Any stipend
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input stipend-filter"
+                            type="radio"
+                            name="stipend"
+                            value="5"
+                            id="stipend5">
+
+                        <label
+                            class="form-check-label"
+                            for="stipend5">
+
+                            ₹5K+ / month
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input stipend-filter"
+                            type="radio"
+                            name="stipend"
+                            value="10"
+                            id="stipend10">
+
+                        <label
+                            class="form-check-label"
+                            for="stipend10">
+
+                            ₹10K+ / month
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input stipend-filter"
+                            type="radio"
+                            name="stipend"
+                            value="15"
+                            id="stipend15">
+
+                        <label
+                            class="form-check-label"
+                            for="stipend15">
+
+                            ₹15K+ / month
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SKILLS -->
+
+                <div class="filter-section">
+
+                    <div class="filter-title">
+
+                        Skills
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input skill-filter"
+                            type="checkbox"
+                            value="html"
+                            id="htmlSkill">
+
+                        <label
+                            class="form-check-label"
+                            for="htmlSkill">
+
+                            HTML / CSS
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input skill-filter"
+                            type="checkbox"
+                            value="javascript"
+                            id="jsSkill">
+
+                        <label
+                            class="form-check-label"
+                            for="jsSkill">
+
+                            JavaScript
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input skill-filter"
+                            type="checkbox"
+                            value="python"
+                            id="pythonSkill">
+
+                        <label
+                            class="form-check-label"
+                            for="pythonSkill">
+
+                            Python
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input skill-filter"
+                            type="checkbox"
+                            value="java"
+                            id="javaSkill">
+
+                        <label
+                            class="form-check-label"
+                            for="javaSkill">
+
+                            Java
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input skill-filter"
+                            type="checkbox"
+                            value="react"
+                            id="reactSkill">
+
+                        <label
+                            class="form-check-label"
+                            for="reactSkill">
+
+                            React
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DURATION -->
+
+                <div class="filter-section">
+
+                    <div class="filter-title">
+
+                        Duration
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input duration-filter"
+                            type="checkbox"
+                            value="3"
+                            id="threeMonths">
+
+                        <label
+                            class="form-check-label"
+                            for="threeMonths">
+
+                            3 Months
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input duration-filter"
+                            type="checkbox"
+                            value="6"
+                            id="sixMonths">
+
+                        <label
+                            class="form-check-label"
+                            for="sixMonths">
+
+                            6 Months
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             INTERNSHIP RESULTS
+        ================================================== -->
+
+        <div class="col-lg-9">
+
+
+            <!-- RESULTS BAR -->
+
+            <div class="results-bar">
+
+                <div class="results-count">
+
+                    Showing
+
+                    <strong id="resultCount">
+
+                        6
+
+                    </strong>
+
+                    internships
+
+                </div>
+
+
+                <select
+                    id="sortSelect"
+                    class="form-select sort-select">
+
+                    <option value="relevance">
+
+                        Sort: Relevance
+
+                    </option>
+
+                    <option value="stipend">
+
+                        Highest stipend
+
+                    </option>
+
+                    <option value="latest">
+
+                        Latest
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 1
+            ================================================== -->
+
+            <div
+                class="internship-card internship-item"
+                data-title="frontend developer intern"
+                data-company="technova solutions"
+                data-location="pune hybrid"
+                data-mode="hybrid"
+                data-stipend="12"
+                data-skills="html css javascript"
+                data-duration="6">
+
+
+                <span class="featured-badge">
+
+                    <i class="bi bi-star-fill me-1"></i>
+
+                    FEATURED
+
+                </span>
+
+
+                <div class="row align-items-center">
+
+
+                    <div class="col">
+
+
+                        <div class="d-flex gap-3">
+
+
+                            <!-- LOGO -->
+
+                            <div class="company-logo logo-orange">
+
+                                <i class="bi bi-code-slash"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="internship-title">
+
+                                    Frontend Developer Intern
+
+                                </h3>
+
+
+                                <div class="company-name">
+
+                                    TechNova Solutions · Pune
+
+                                    <span class="verified ms-2">
+
+                                        <i class="bi bi-patch-check-fill"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SKILLS -->
+
+                        <div class="mt-3">
+
+                            <span class="skill-badge skill-html">
+
+                                HTML
+
+                            </span>
+
+                            <span class="skill-badge skill-css">
+
+                                CSS
+
+                            </span>
+
+                            <span class="skill-badge skill-js">
+
+                                JavaScript
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                Bootstrap
+
+                            </span>
+
+                        </div>
+
+
+                        <!-- META -->
+
+                        <div class="internship-meta">
+
+                            <span>
+
+                                <i class="bi bi-geo-alt"></i>
+
+                                Pune / Hybrid
+
+                            </span>
+
+
+                            <span class="stipend">
+
+                                <i class="bi bi-wallet2"></i>
+
+                                ₹12,000 / month
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                6 Months
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-clock"></i>
+
+                                Posted 2 days ago
+
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="col-lg-auto card-actions">
+
+                        <div class="d-flex gap-2">
+
+                            <button
+                                class="save-button"
+                                title="Save internship">
+
+                                <i class="bi bi-bookmark"></i>
+
+                            </button>
+
+
+                            <button
+                                class="view-button"
+                                onclick="viewInternship('Frontend Developer Intern')">
+
+                                View Details
+
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 2
+            ================================================== -->
+
+            <div
+                class="internship-card internship-item"
+                data-title="python developer intern"
+                data-company="datacore technologies"
+                data-location="mumbai"
+                data-mode="onsite"
+                data-stipend="15"
+                data-skills="python"
+                data-duration="6">
+
+
+                <div class="row align-items-center">
+
+
+                    <div class="col">
+
+                        <div class="d-flex gap-3">
+
+                            <div class="company-logo logo-green">
+
+                                <i class="bi bi-terminal"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="internship-title">
+
+                                    Python Developer Intern
+
+                                </h3>
+
+
+                                <div class="company-name">
+
+                                    DataCore Technologies · Mumbai
+
+                                    <span class="verified ms-2">
+
+                                        <i class="bi bi-patch-check-fill"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <span class="skill-badge skill-python">
+
+                                Python
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                Flask
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                MySQL
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                REST API
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="internship-meta">
+
+                            <span>
+
+                                <i class="bi bi-geo-alt"></i>
+
+                                Mumbai · On-site
+
+                            </span>
+
+
+                            <span class="stipend">
+
+                                <i class="bi bi-wallet2"></i>
+
+                                ₹15,000 / month
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                6 Months
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-clock"></i>
+
+                                Posted 4 days ago
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-auto card-actions">
+
+                        <div class="d-flex gap-2">
+
+                            <button
+                                class="save-button">
+
+                                <i class="bi bi-bookmark"></i>
+
+                            </button>
+
+
+                            <button
+                                class="view-button"
+                                onclick="viewInternship('Python Developer Intern')">
+
+                                View Details
+
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 3
+            ================================================== -->
+
+            <div
+                class="internship-card internship-item"
+                data-title="java backend developer intern"
+                data-company="codebridge technologies"
+                data-location="bangalore"
+                data-mode="onsite"
+                data-stipend="18"
+                data-skills="java"
+                data-duration="6">
+
+
+                <div class="row align-items-center">
+
+
+                    <div class="col">
+
+                        <div class="d-flex gap-3">
+
+                            <div class="company-logo logo-wine">
+
+                                <i class="bi bi-cup-hot-fill"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="internship-title">
+
+                                    Java Backend Developer Intern
+
+                                </h3>
+
+
+                                <div class="company-name">
+
+                                    CodeBridge Technologies · Bangalore
+
+                                    <span class="verified ms-2">
+
+                                        <i class="bi bi-patch-check-fill"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <span class="skill-badge skill-java">
+
+                                Java
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                Spring Boot
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                MySQL
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                REST API
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="internship-meta">
+
+                            <span>
+
+                                <i class="bi bi-geo-alt"></i>
+
+                                Bangalore · On-site
+
+                            </span>
+
+
+                            <span class="stipend">
+
+                                <i class="bi bi-wallet2"></i>
+
+                                ₹18,000 / month
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                6 Months
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-clock"></i>
+
+                                Posted 1 day ago
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-auto card-actions">
+
+                        <div class="d-flex gap-2">
+
+                            <button
+                                class="save-button">
+
+                                <i class="bi bi-bookmark"></i>
+
+                            </button>
+
+
+                            <button
+                                class="view-button"
+                                onclick="viewInternship('Java Backend Developer Intern')">
+
+                                View Details
+
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 4
+            ================================================== -->
+
+            <div
+                class="internship-card internship-item"
+                data-title="react frontend intern"
+                data-company="pixelcraft studio"
+                data-location="remote"
+                data-mode="remote"
+                data-stipend="10"
+                data-skills="javascript react html"
+                data-duration="3">
+
+
+                <div class="row align-items-center">
+
+
+                    <div class="col">
+
+                        <div class="d-flex gap-3">
+
+                            <div class="company-logo logo-blue">
+
+                                <i class="bi bi-palette-fill"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="internship-title">
+
+                                    React Frontend Intern
+
+                                </h3>
+
+
+                                <div class="company-name">
+
+                                    PixelCraft Studio · Remote
+
+                                    <span class="verified ms-2">
+
+                                        <i class="bi bi-patch-check-fill"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <span class="skill-badge skill-js">
+
+                                JavaScript
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                React
+
+                            </span>
+
+                            <span class="skill-badge skill-html">
+
+                                HTML
+
+                            </span>
+
+                            <span class="skill-badge skill-css">
+
+                                CSS
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="internship-meta">
+
+                            <span>
+
+                                <i class="bi bi-globe2"></i>
+
+                                Remote
+
+                            </span>
+
+
+                            <span class="stipend">
+
+                                <i class="bi bi-wallet2"></i>
+
+                                ₹10,000 / month
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                3 Months
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-clock"></i>
+
+                                Posted 3 days ago
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-auto card-actions">
+
+                        <div class="d-flex gap-2">
+
+                            <button
+                                class="save-button">
+
+                                <i class="bi bi-bookmark"></i>
+
+                            </button>
+
+
+                            <button
+                                class="view-button"
+                                onclick="viewInternship('React Frontend Intern')">
+
+                                View Details
+
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 5
+            ================================================== -->
+
+            <div
+                class="internship-card internship-item"
+                data-title="web development intern"
+                data-company="brightbyte systems"
+                data-location="pune"
+                data-mode="onsite"
+                data-stipend="8"
+                data-skills="html css javascript"
+                data-duration="3">
+
+
+                <div class="row align-items-center">
+
+
+                    <div class="col">
+
+                        <div class="d-flex gap-3">
+
+                            <div class="company-logo logo-orange">
+
+                                <i class="bi bi-globe2"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="internship-title">
+
+                                    Web Development Intern
+
+                                </h3>
+
+
+                                <div class="company-name">
+
+                                    BrightByte Systems · Pune
+
+                                    <span class="verified ms-2">
+
+                                        <i class="bi bi-patch-check-fill"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <span class="skill-badge skill-html">
+
+                                HTML
+
+                            </span>
+
+                            <span class="skill-badge skill-css">
+
+                                CSS
+
+                            </span>
+
+                            <span class="skill-badge skill-js">
+
+                                JavaScript
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="internship-meta">
+
+                            <span>
+
+                                <i class="bi bi-geo-alt"></i>
+
+                                Pune · On-site
+
+                            </span>
+
+
+                            <span class="stipend">
+
+                                <i class="bi bi-wallet2"></i>
+
+                                ₹8,000 / month
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                3 Months
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-clock"></i>
+
+                                Posted 5 days ago
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-auto card-actions">
+
+                        <div class="d-flex gap-2">
+
+                            <button
+                                class="save-button">
+
+                                <i class="bi bi-bookmark"></i>
+
+                            </button>
+
+
+                            <button
+                                class="view-button"
+                                onclick="viewInternship('Web Development Intern')">
+
+                                View Details
+
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 6
+            ================================================== -->
+
+            <div
+                class="internship-card internship-item"
+                data-title="data analyst intern"
+                data-company="insight analytics"
+                data-location="mumbai hybrid"
+                data-mode="hybrid"
+                data-stipend="14"
+                data-skills="python"
+                data-duration="6">
+
+
+                <div class="row align-items-center">
+
+
+                    <div class="col">
+
+                        <div class="d-flex gap-3">
+
+                            <div class="company-logo logo-green">
+
+                                <i class="bi bi-bar-chart-fill"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="internship-title">
+
+                                    Data Analyst Intern
+
+                                </h3>
+
+
+                                <div class="company-name">
+
+                                    Insight Analytics · Mumbai
+
+                                    <span class="verified ms-2">
+
+                                        <i class="bi bi-patch-check-fill"></i>
+
+                                        Verified
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mt-3">
+
+                            <span class="skill-badge skill-python">
+
+                                Python
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                Excel
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                SQL
+
+                            </span>
+
+                            <span class="skill-badge">
+
+                                Power BI
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="internship-meta">
+
+                            <span>
+
+                                <i class="bi bi-geo-alt"></i>
+
+                                Mumbai / Hybrid
+
+                            </span>
+
+
+                            <span class="stipend">
+
+                                <i class="bi bi-wallet2"></i>
+
+                                ₹14,000 / month
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                6 Months
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="bi bi-clock"></i>
+
+                                Posted 6 days ago
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-auto card-actions">
+
+                        <div class="d-flex gap-2">
+
+                            <button
+                                class="save-button">
+
+                                <i class="bi bi-bookmark"></i>
+
+                            </button>
+
+
+                            <button
+                                class="view-button"
+                                onclick="viewInternship('Data Analyst Intern')">
+
+                                View Details
+
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NO RESULTS
+            ================================================== -->
+
+            <div id="noResults">
+
+                <i class="bi bi-search"></i>
+
+                <h5 class="mt-3">
+
+                    No internships found
+
+                </h5>
+
+                <p class="text-muted mb-0">
+
+                    Try changing your search or filters.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PAGINATION
+            ================================================== -->
+
+            <nav class="mt-4">
+
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item disabled">
+
+                        <a class="page-link">
+
+                            Previous
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="page-item active">
+
+                        <a class="page-link">
+
+                            1
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="page-item">
+
+                        <a class="page-link">
+
+                            2
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="page-item">
+
+                        <a class="page-link">
+
+                            3
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="page-item">
+
+                        <a class="page-link">
+
+                            Next
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="main-footer">
+
+    <div class="container">
+
+        <div class="row gy-3 align-items-center">
+
+            <div class="col-md-6">
+
+                <div class="footer-brand">
+
+                    Pune<span>Intern</span>
+
+                </div>
+
+                <small>
+
+                    Connecting students with meaningful
+                    internship opportunities.
+
+                </small>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end">
+
+                <small>
+
+                    © 2026 PuneIntern. All rights reserved.
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<!-- =====================================================
+     PAGE JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const locationFilter =
+        document.getElementById("locationFilter");
+
+    const searchButton =
+        document.getElementById("searchButton");
+
+    const resultCount =
+        document.getElementById("resultCount");
+
+    const noResults =
+        document.getElementById("noResults");
+
+    const internshipCards =
+        document.querySelectorAll(".internship-item");
+
+
+
+    /* =====================================================
+       FILTER FUNCTION
+    ===================================================== */
+
+    function filterInternships() {
+
+
+        const searchText =
+            searchInput.value
+                .toLowerCase()
+                .trim();
+
+
+        const selectedLocation =
+            locationFilter.value;
+
+
+        /* Work Mode */
+
+        const selectedModes =
+            Array.from(
+                document.querySelectorAll(".work-mode:checked")
+            )
+            .map(item => item.value);
+
+
+        /* Skills */
+
+        const selectedSkills =
+            Array.from(
+                document.querySelectorAll(".skill-filter:checked")
+            )
+            .map(item => item.value);
+
+
+        /* Stipend */
+
+        const selectedStipend =
+            document.querySelector(
+                ".stipend-filter:checked"
+            ).value;
+
+
+        /* Duration */
+
+        const selectedDurations =
+            Array.from(
+                document.querySelectorAll(".duration-filter:checked")
+            )
+            .map(item => item.value);
+
+
+        let visibleCount = 0;
+
+
+        internshipCards.forEach(card => {
+
+
+            const title =
+                card.dataset.title;
+
+            const company =
+                card.dataset.company;
+
+            const location =
+                card.dataset.location;
+
+            const mode =
+                card.dataset.mode;
+
+            const stipend =
+                Number(card.dataset.stipend);
+
+            const skills =
+                card.dataset.skills;
+
+            const duration =
+                card.dataset.duration;
+
+
+            /* Search */
+
+            const matchesSearch =
+                searchText === "" ||
+                title.includes(searchText) ||
+                company.includes(searchText) ||
+                skills.includes(searchText);
+
+
+            /* Location */
+
+            const matchesLocation =
+                selectedLocation === "all" ||
+                location.includes(selectedLocation);
+
+
+            /* Work mode */
+
+            const matchesMode =
+                selectedModes.length === 0 ||
+                selectedModes.includes(mode);
+
+
+            /* Skills */
+
+            const matchesSkills =
+                selectedSkills.length === 0 ||
+                selectedSkills.some(skill =>
+                    skills.includes(skill)
+                );
+
+
+            /* Stipend */
+
+            const matchesStipend =
+                selectedStipend === "all" ||
+                stipend >= Number(selectedStipend);
+
+
+            /* Duration */
+
+            const matchesDuration =
+                selectedDurations.length === 0 ||
+                selectedDurations.includes(duration);
+
+
+            /* Final result */
+
+            const showCard =
+                matchesSearch &&
+                matchesLocation &&
+                matchesMode &&
+                matchesSkills &&
+                matchesStipend &&
+                matchesDuration;
+
+
+            if (showCard) {
+
+                card.style.display = "";
+
+                visibleCount++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        resultCount.textContent =
+            visibleCount;
+
+
+        if (visibleCount === 0) {
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       SEARCH BUTTON
+    ===================================================== */
+
+    searchButton.addEventListener(
+        "click",
+        filterInternships
+    );
+
+
+    /* Search while typing */
+
+    searchInput.addEventListener(
+        "input",
+        filterInternships
+    );
+
+
+    /* Location */
+
+    locationFilter.addEventListener(
+        "change",
+        filterInternships
+    );
+
+
+    /* =====================================================
+       FILTER LISTENERS
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".work-mode, .skill-filter, .stipend-filter, .duration-filter"
+        )
+        .forEach(filter => {
+
+            filter.addEventListener(
+                "change",
+                filterInternships
+            );
+
+        });
+
+
+
+    /* =====================================================
+       CLEAR FILTERS
+    ===================================================== */
+
+    document
+        .getElementById("clearFilters")
+        .addEventListener("click", function () {
+
+
+            searchInput.value = "";
+
+            locationFilter.value = "all";
+
+
+            document
+                .querySelectorAll(
+                    ".work-mode, .skill-filter, .duration-filter"
+                )
+                .forEach(item => {
+
+                    item.checked = false;
+
+                });
+
+
+            document
+                .getElementById("stipendAll")
+                .checked = true;
+
+
+            filterInternships();
+
+        });
+
+
+
+    /* =====================================================
+       SAVE INTERNSHIP
+    ===================================================== */
+
+    document
+        .querySelectorAll(".save-button")
+        .forEach(button => {
+
+
+            button.addEventListener(
+                "click",
+                function () {
+
+
+                    this.classList.toggle("saved");
+
+
+                    if (
+                        this.classList.contains("saved")
+                    ) {
+
+                        this.innerHTML =
+                            '<i class="bi bi-bookmark-fill"></i>';
+
+                    } else {
+
+                        this.innerHTML =
+                            '<i class="bi bi-bookmark"></i>';
+
+                    }
+
+                }
+            );
+
+        });
+
+
+
+    /* =====================================================
+       VIEW DETAILS
+    ===================================================== */
+
+    function viewInternship(title) {
+
+        /*
+         * Later this will redirect to:
+         *
+         * internship-details.html
+         *
+         * For now we show the selected internship.
+         */
+
+        alert(
+            "Opening internship details for:\n\n" +
+            title
+        );
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>

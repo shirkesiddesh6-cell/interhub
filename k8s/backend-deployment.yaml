@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: puneintern-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: puneintern-backend
+  template:
+    metadata:
+      labels:
+        app: puneintern-backend
+    spec:
+      containers:
+        - name: backend
+          image: internship-portal-backend:postgres
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5001
+          env:
+            - name: DB_HOST
+              value: "puneintern-postgres"
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: puneintern-postgres-secret
+                  key: POSTGRES_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: puneintern-postgres-secret
+                  key: POSTGRES_PASSWORD
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: puneintern-postgres-secret
+                  key: POSTGRES_DB

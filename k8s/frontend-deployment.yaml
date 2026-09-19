@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: puneintern-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: puneintern-frontend
+  template:
+    metadata:
+      labels:
+        app: puneintern-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: internship-portal-frontend
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80

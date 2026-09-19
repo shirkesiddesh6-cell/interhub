@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: puneintern-backend
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: .
+    container_name: puneintern-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

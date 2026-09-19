@@ -1,0 +1,605 @@
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PuneIntern | Post Internship</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Company CSS -->
+    <link rel="stylesheet" href="company.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            Pune<span>Intern</span>
+        </div>
+
+        <div class="company-mini">
+
+            <div class="company-avatar">
+                TN
+            </div>
+
+            <div>
+                <h6>TechNova Solutions</h6>
+                <small>Company Account</small>
+            </div>
+
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="company_dashboard.html">
+                <i class="bi bi-grid-1x2-fill"></i>
+                Dashboard
+            </a>
+
+            <a href="company_post_internship.html" class="active">
+                <i class="bi bi-plus-square"></i>
+                Post Internship
+            </a>
+
+            <a href="company_internships.html">
+                <i class="bi bi-briefcase"></i>
+                My Internships
+            </a>
+
+            <a href="company_applications.html">
+                <i class="bi bi-file-earmark-person"></i>
+                Applications
+            </a>
+
+            <a href="company_shortlisted.html">
+                <i class="bi bi-star"></i>
+                Shortlisted
+            </a>
+
+            <a href="company_interviews.html">
+                <i class="bi bi-calendar2-check"></i>
+                Interviews
+            </a>
+
+            <a href="company_hired.html">
+                <i class="bi bi-person-check"></i>
+                Hired Interns
+            </a>
+
+            <a href="company_profile.html">
+                <i class="bi bi-building"></i>
+                Company Profile
+            </a>
+
+            <a href="company_settings.html">
+                <i class="bi bi-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="logout-link">
+
+            <a href="company_login.html">
+                <i class="bi bi-box-arrow-left"></i>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+            >
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div></div>
+
+            <div class="d-flex align-items-center gap-3">
+
+                <button class="notification">
+                    <i class="bi bi-bell"></i>
+                    <span class="dot"></span>
+                </button>
+
+                <div class="d-none d-md-block">
+
+                    <strong>
+                        TechNova Solutions
+                    </strong>
+
+                    <small class="text-muted d-block">
+                        Company Portal
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAGE CONTENT
+        ========================== -->
+        <section class="content">
+
+            <div class="page-title mb-4">
+
+                <h2>
+                    Post New Internship
+                </h2>
+
+                <p>
+                    Create an opportunity that students can discover and apply for.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <!-- =========================
+                     INTERNSHIP FORM
+                ========================== -->
+                <div class="col-xl-8">
+
+                    <div class="card">
+
+                        <div class="card-head">
+
+                            <h5>
+                                Internship Details
+                            </h5>
+
+                            <span class="status status-orange">
+                                Draft
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-body-custom">
+
+                            <form id="postForm">
+
+                                <div class="row g-3">
+
+                                    <!-- Internship Title -->
+                                    <div class="col-12">
+
+                                        <label class="form-label">
+                                            Internship Title *
+                                        </label>
+
+                                       <input
+    id="title"
+    class="form-control"
+    required
+    placeholder="e.g. Frontend Developer Intern"
+>
+
+                                    </div>
+
+
+                                    <!-- Department -->
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Department
+                                        </label>
+
+                                        <select class="form-select">
+
+                                            <option>
+                                                Technology
+                                            </option>
+
+                                            <option>
+                                                Design
+                                            </option>
+
+                                            <option>
+                                                Data & Analytics
+                                            </option>
+
+                                            <option>
+                                                Marketing
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- Number of Openings -->
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Number of Openings *
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            type="number"
+                                            min="1"
+                                            value="2"
+                                        >
+
+                                    </div>
+
+
+                                    <!-- Location -->
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Location
+                                        </label>
+
+                               <input
+    id="location"
+    class="form-control"
+    placeholder="Pune / Remote"
+>
+                                    </div>
+
+
+                                    <!-- Work Mode -->
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Work Mode
+                                        </label>
+
+                                        <select id="mode"  class="form-select">
+
+                                            <option>
+                                                Hybrid
+                                            </option>
+
+                                            <option>
+                                                On-site
+                                            </option>
+
+                                            <option>
+                                                Remote
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <!-- Stipend -->
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Stipend / Month
+                                        </label>
+
+                                        <input
+    id="stipend"
+    class="form-control"
+    placeholder="₹12,000"
+>
+
+                                    </div>
+
+
+                                    <!-- Application Deadline -->
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Application Deadline
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            type="date"
+                                        >
+
+                                    </div>
+
+
+                                    <!-- Required Skills -->
+                                    <div class="col-12">
+
+                                        <label class="form-label">
+                                            Required Skills
+                                        </label>
+
+                                        <input
+                                         id="skills"
+                                            class="form-control"
+                                            placeholder="HTML, CSS, JavaScript, Bootstrap"
+                                        >
+
+                                    </div>
+
+
+                                    <!-- Description -->
+                                    <div class="col-12">
+
+                                        <label class="form-label">
+                                            Description
+                                        </label>
+
+                                        <textarea
+                                         id="description"
+                                            class="form-control"
+                                            rows="5"
+                                            placeholder="Describe responsibilities, learning opportunities and expectations..."
+                                        ></textarea>
+
+                                    </div>
+
+
+                                    <!-- Eligibility -->
+                                    <div class="col-12">
+
+                                        <label class="form-label">
+                                            Eligibility
+                                        </label>
+
+                                        <textarea
+                                            class="form-control"
+                                            rows="3"
+                                            placeholder="Course, year, minimum CGPA, etc."
+                                        ></textarea>
+
+                                    </div>
+
+
+                                    <!-- Buttons -->
+                                    <div class="col-12 d-flex gap-2">
+
+                                        <button class="action-btn">
+                                            Publish Internship
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-outline-secondary"
+                                        >
+                                            Save as Draft
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     POSTING TIPS
+                ========================== -->
+                <div class="col-xl-4">
+
+                    <div class="card">
+
+                        <div class="card-head">
+
+                            <h5>
+                                Posting Tips
+                            </h5>
+
+                        </div>
+
+
+                        <div class="card-body-custom">
+
+                            <div class="item p-0 pb-3 mb-3">
+
+                                <strong>
+                                    Be specific
+                                </strong>
+
+                                <p class="small text-muted mb-0">
+                                    Clearly mention the skills and responsibilities
+                                    students will handle.
+                                </p>
+
+                            </div>
+
+
+                            <div class="item p-0 pb-3 mb-3">
+
+                                <strong>
+                                    Show the stipend
+                                </strong>
+
+                                <p class="small text-muted mb-0">
+                                    Transparent compensation improves quality
+                                    applications.
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Set a clear deadline
+                                </strong>
+
+                                <p class="small text-muted mb-0">
+                                    Give students enough time to prepare and apply.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        document
+            .getElementById("mobileMenu")
+            .onclick = () => {
+
+                document
+                    .getElementById("sidebar")
+                    .classList
+                    .toggle("show");
+
+            };
+
+
+       document
+    .getElementById("postForm")
+    .onsubmit = async (event) => {
+
+        event.preventDefault();
+
+        const title =
+            document.getElementById("title").value.trim();
+
+        const location =
+            document.getElementById("location").value.trim();
+
+        const mode =
+            document.getElementById("mode").value;
+
+        const stipend =
+            document.getElementById("stipend").value.trim();
+
+        const skills =
+            document.getElementById("skills").value.trim();
+
+        const description =
+            document.getElementById("description").value.trim();
+
+
+        try {
+
+            const response = await fetch(
+                "/api/internships",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        title: title,
+                        company: "TechNova Solutions",
+                        location: location,
+                        mode: mode,
+                        stipend: stipend,
+                        duration: "6 Months",
+                        skills: skills,
+                        description: description
+                    })
+                }
+            );
+
+
+            const data = await response.json();
+
+
+            if (data.success) {
+
+                alert(
+                    "Internship published successfully!"
+                );
+
+                document
+                    .getElementById("postForm")
+                    .reset();
+
+            } else {
+
+                alert(
+                    data.message || "Unable to publish internship."
+                );
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Publish internship error:",
+                error
+            );
+
+            alert(
+                "Unable to connect to the backend server."
+            );
+
+        }
+
+    };
+
+    </script>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+</body>
+
+</html>
+```
+
+### What to do now
+
+1. Replace the current `company_post_internship.html` with the clean version above.
+2. Press **Ctrl + S**.
+3. **Do not change anything else yet.**
+
+Once saved, tell me **“done”**. Then we'll add the IDs to the form fields and connect it to your existing SQLite database.

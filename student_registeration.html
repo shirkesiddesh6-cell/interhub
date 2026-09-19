@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PuneIntern | Student Registration</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+
+    <style>
+
+        :root {
+            --navy: #102a43;
+            --navy-dark: #081c2d;
+            --orange: #f97316;
+            --green: #198754;
+            --wine: #7f1d3b;
+            --text: #243b53;
+            --muted: #7b8794;
+            --border: #d9e2ec;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            margin: 0;
+
+            padding: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--navy),
+                    var(--wine)
+                );
+
+            font-family:
+                "Segoe UI",
+                Arial,
+                sans-serif;
+        }
+
+
+        /* =========================
+           MAIN CARD
+        ========================== */
+
+        .registration-wrapper {
+
+            width: 100%;
+
+            max-width: 1150px;
+        }
+
+
+        .registration-card {
+
+            background: #ffffff;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* =========================
+           LEFT SECTION
+        ========================== */
+
+        .info-section {
+
+            min-height: 820px;
+
+            padding: 50px 45px;
+
+            background: var(--navy);
+
+            color: white;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .info-section::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+
+            height: 250px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(249, 115, 22, 0.12);
+
+            top: -100px;
+
+            right: -90px;
+        }
+
+
+        .info-section::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 210px;
+
+            height: 210px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(25, 135, 84, 0.10);
+
+            bottom: -90px;
+
+            left: -80px;
+        }
+
+
+        /* =========================
+           BRAND
+        ========================== */
+
+        .brand {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 28px;
+
+            font-weight: 800;
+
+            margin-bottom: 70px;
+        }
+
+
+        .brand span {
+
+            color: var(--orange);
+        }
+
+
+        /* =========================
+           STUDENT ICON
+        ========================== */
+
+        .student-icon {
+
+            width: 90px;
+
+            height: 90px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 22px;
+
+            background:
+                rgba(25, 135, 84, 0.15);
+
+            color: #55c58a;
+
+            font-size: 42px;
+
+            margin-bottom: 30px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           LEFT CONTENT
+        ========================== */
+
+        .info-section h1 {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 36px;
+
+            font-weight: 750;
+
+            line-height: 1.2;
+
+            margin-bottom: 18px;
+        }
+
+
+        .info-section h1 span {
+
+            color: var(--orange);
+        }
+
+
+        .info-section p {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 430px;
+
+            color: #bcccdc;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           BENEFITS
+        ========================== */
+
+        .benefits {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 35px;
+        }
+
+
+        .benefit {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 16px;
+
+            color: #d9e2ec;
+
+            font-size: 14px;
+        }
+
+
+        .benefit i {
+
+            color: var(--green);
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           RIGHT SECTION
+        ========================== */
+
+        .form-section {
+
+            min-height: 820px;
+
+            padding: 45px 50px;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .form-content {
+
+            width: 100%;
+
+            max-width: 540px;
+
+            margin: auto;
+        }
+
+
+        .form-content h2 {
+
+            color: var(--navy);
+
+            font-size: 28px;
+
+            font-weight: 750;
+
+            margin-bottom: 7px;
+        }
+
+
+        .form-subtitle {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* =========================
+           LABEL
+        ========================== */
+
+        .form-label {
+
+            color: var(--navy);
+
+            font-size: 13px;
+
+            font-weight: 650;
+
+            margin-bottom: 7px;
+        }
+
+
+        /* =========================
+           INPUTS
+        ========================== */
+
+        .input-group-text {
+
+            background: #ffffff;
+
+            border: 1px solid var(--border);
+
+            border-right: none;
+
+            color: var(--orange);
+
+            min-width: 46px;
+
+            justify-content: center;
+        }
+
+
+        .form-control,
+        .form-select {
+
+            height: 48px;
+
+            border: 1px solid var(--border);
+
+            color: var(--text);
+
+            font-size: 14px;
+        }
+
+
+        .input-group .form-control {
+
+            border-left: none;
+        }
+
+
+        .input-group .form-select {
+
+            border-left: none;
+        }
+
+
+        .form-control:focus,
+        .form-select:focus {
+
+            border-color: var(--orange);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(249, 115, 22, 0.10);
+        }
+
+
+        .input-group:focus-within
+        .input-group-text {
+
+            border-color: var(--orange);
+        }
+
+
+        /* =========================
+           PASSWORD
+        ========================== */
+
+        .password-toggle {
+
+            cursor: pointer;
+
+            background: #ffffff;
+
+            border:
+                1px solid var(--border);
+
+            border-left: none;
+
+            color: var(--muted);
+        }
+
+
+        .password-toggle:hover {
+
+            color: var(--orange);
+        }
+
+
+        /* =========================
+           TERMS
+        ========================== */
+
+        .terms {
+
+            font-size: 12px;
+
+            color: var(--muted);
+
+            margin-top: 5px;
+        }
+
+
+        .terms a {
+
+            color: var(--navy);
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+
+        .terms a:hover {
+
+            color: var(--orange);
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .register-btn {
+
+            width: 100%;
+
+            height: 52px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: var(--orange);
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: 650;
+
+            margin-top: 20px;
+
+            transition: 0.2s ease;
+        }
+
+
+        .register-btn:hover {
+
+            background: #ea580c;
+
+            transform: translateY(-1px);
+        }
+
+
+        .register-btn i {
+
+            margin-left: 7px;
+        }
+
+
+        /* =========================
+           MESSAGES
+        ========================== */
+
+        .message {
+
+            display: none;
+
+            border-radius: 10px;
+
+            padding: 12px 14px;
+
+            margin-top: 16px;
+
+            font-size: 13px;
+        }
+
+
+        .success-message {
+
+            background: #eaf7ef;
+
+            color: var(--green);
+
+            border: 1px solid #b8e0c8;
+        }
+
+
+        .error-message {
+
+            background: #f8e9ee;
+
+            color: var(--wine);
+
+            border: 1px solid #e5bac9;
+        }
+
+
+        /* =========================
+           LOGIN
+        ========================== */
+
+        .login-link {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        .login-link a {
+
+            color: var(--navy);
+
+            font-weight: 650;
+
+            text-decoration: none;
+        }
+
+
+        .login-link a:hover {
+
+            color: var(--orange);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 991px) {
+
+            .info-section {
+
+                min-height: auto;
+
+                padding: 40px;
+            }
+
+
+            .form-section {
+
+                min-height: auto;
+
+                padding: 40px;
+            }
+
+
+            .brand {
+
+                margin-bottom: 40px;
+            }
+
+        }
+
+
+        @media (max-width: 767px) {
+
+            body {
+
+                padding: 12px;
+            }
+
+
+            .info-section {
+
+                padding: 35px 28px;
+            }
+
+
+            .form-section {
+
+                padding: 35px 28px;
+            }
+
+
+            .student-icon {
+
+                width: 70px;
+
+                height: 70px;
+
+                font-size: 32px;
+            }
+
+
+            .info-section h1 {
+
+                font-size: 28px;
+            }
+
+
+            .benefits {
+
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="registration-wrapper">
+
+    <div class="registration-card">
+
+        <div class="row g-0">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================== -->
+
+            <div class="col-lg-5">
+
+                <div class="info-section">
+
+
+                    <div class="brand">
+
+                        Pune<span>Intern</span>
+
+                    </div>
+
+
+                    <div class="student-icon">
+
+                        <i class="bi bi-mortarboard"></i>
+
+                    </div>
+
+
+                    <h1>
+
+                        Start your
+
+                        <span>
+                            internship journey.
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Create your student account and
+                        discover internship opportunities
+                        that match your skills, interests,
+                        and career goals.
+
+                    </p>
+
+
+                    <div class="benefits">
+
+
+                        <div class="benefit">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Discover verified internships
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Apply directly to companies
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Track your applications
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Build your professional profile
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RIGHT SIDE
+            ================================================== -->
+
+            <div class="col-lg-7">
+
+                <div class="form-section">
+
+                    <div class="form-content">
+
+
+                        <h2>
+
+                            Create Student Account
+
+                        </h2>
+
+
+                        <p class="form-subtitle">
+
+                            Enter your academic and personal
+                            details to create your PuneIntern
+                            student profile.
+
+                        </p>
+
+
+                        <!-- =================================================
+                             FIRST + LAST NAME
+                        ================================================== -->
+
+                        <div class="row">
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+
+                                    First Name
+
+                                </label>
+
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+
+                                        <i class="bi bi-person"></i>
+
+                                    </span>
+
+
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        class="form-control"
+                                        placeholder="First name"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+
+                                    Last Name
+
+                                </label>
+
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+
+                                        <i class="bi bi-person"></i>
+
+                                    </span>
+
+
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        class="form-control"
+                                        placeholder="Last name"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- =================================================
+                             EMAIL
+                        ================================================== -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Email Address
+
+                            </label>
+
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+
+                                    <i class="bi bi-envelope"></i>
+
+                                </span>
+
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-control"
+                                    placeholder="Enter your email address"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             MOBILE
+                        ================================================== -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Mobile Number
+
+                            </label>
+
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+
+                                    <i class="bi bi-phone"></i>
+
+                                </span>
+
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    class="form-control"
+                                    placeholder="10-digit mobile number"
+                                    maxlength="10"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             COLLEGE
+                        ================================================== -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                College / University
+
+                            </label>
+
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+
+                                    <i class="bi bi-building"></i>
+
+                                </span>
+
+
+                                <input
+                                    type="text"
+                                    id="college"
+                                    class="form-control"
+                                    placeholder="Enter your college / university"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             COURSE + YEAR
+                        ================================================== -->
+
+                        <div class="row">
+
+
+                            <!-- COURSE -->
+
+                            <div class="col-md-7 mb-3">
+
+                                <label class="form-label">
+
+                                    Course / Degree
+
+                                </label>
+
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+
+                                        <i class="bi bi-book"></i>
+
+                                    </span>
+
+
+                                    <select
+                                        id="course"
+                                        class="form-select"
+                                        required>
+
+                                        <option
+                                            value=""
+                                            selected
+                                            disabled>
+
+                                            Select course
+
+                                        </option>
+
+
+                                        <option value="BSc Computer Science">
+
+                                            B.Sc. Computer Science
+
+                                        </option>
+
+
+                                        <option value="BSc Information Technology">
+
+                                            B.Sc. Information Technology
+
+                                        </option>
+
+
+                                        <option value="BCA">
+
+                                            Bachelor of Computer Applications (BCA)
+
+                                        </option>
+
+
+                                        <option value="BE Computer Engineering">
+
+                                            B.E. Computer Engineering
+
+                                        </option>
+
+
+                                        <option value="BE Information Technology">
+
+                                            B.E. Information Technology
+
+                                        </option>
+
+
+                                        <option value="BTech Computer Science">
+
+                                            B.Tech Computer Science
+
+                                        </option>
+
+
+                                        <option value="BTech Information Technology">
+
+                                            B.Tech Information Technology
+
+                                        </option>
+
+
+                                        <option value="BCom">
+
+                                            Bachelor of Commerce (B.Com)
+
+                                        </option>
+
+
+                                        <option value="BBA">
+
+                                            Bachelor of Business Administration (BBA)
+
+                                        </option>
+
+
+                                        <option value="BA">
+
+                                            Bachelor of Arts (B.A.)
+
+                                        </option>
+
+
+                                        <option value="BPharm">
+
+                                            Bachelor of Pharmacy (B.Pharm)
+
+                                        </option>
+
+
+                                        <option value="MSc Computer Science">
+
+                                            M.Sc. Computer Science
+
+                                        </option>
+
+
+                                        <option value="MCA">
+
+                                            Master of Computer Applications (MCA)
+
+                                        </option>
+
+
+                                        <option value="MBA">
+
+                                            Master of Business Administration (MBA)
+
+                                        </option>
+
+
+                                        <option value="Other">
+
+                                            Other
+
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- YEAR -->
+
+                            <div class="col-md-5 mb-3">
+
+                                <label class="form-label">
+
+                                    Current Year
+
+                                </label>
+
+
+                                <select
+                                    id="year"
+                                    class="form-select"
+                                    required>
+
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled>
+
+                                        Select year
+
+                                    </option>
+
+
+                                    <option value="1">
+
+                                        First Year
+
+                                    </option>
+
+
+                                    <option value="2">
+
+                                        Second Year
+
+                                    </option>
+
+
+                                    <option value="3">
+
+                                        Third Year
+
+                                    </option>
+
+
+                                    <option value="4">
+
+                                        Fourth Year
+
+                                    </option>
+
+
+                                    <option value="graduate">
+
+                                        Graduate
+
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- =================================================
+                             SPECIALIZATION + INTERNSHIP MODE
+                        ================================================== -->
+
+                        <div class="row">
+
+
+                            <!-- SPECIALIZATION -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+
+                                    Specialization
+
+                                </label>
+
+
+                                <select
+                                    id="specialization"
+                                    class="form-select"
+                                    required>
+
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled>
+
+                                        Select specialization
+
+                                    </option>
+
+
+                                    <option value="Software Development">
+
+                                        Software Development
+
+                                    </option>
+
+
+                                    <option value="Web Development">
+
+                                        Web Development
+
+                                    </option>
+
+
+                                    <option value="Data Science">
+
+                                        Data Science
+
+                                    </option>
+
+
+                                    <option value="Artificial Intelligence">
+
+                                        Artificial Intelligence
+
+                                    </option>
+
+
+                                    <option value="Machine Learning">
+
+                                        Machine Learning
+
+                                    </option>
+
+
+                                    <option value="Cyber Security">
+
+                                        Cyber Security
+
+                                    </option>
+
+
+                                    <option value="Cloud Computing">
+
+                                        Cloud Computing
+
+                                    </option>
+
+
+                                    <option value="Database">
+
+                                        Database Management
+
+                                    </option>
+
+
+                                    <option value="Other">
+
+                                        Other
+
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- INTERNSHIP MODE -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+
+                                    Internship Mode
+
+                                </label>
+
+
+                                <select
+                                    id="internshipMode"
+                                    class="form-select"
+                                    required>
+
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled>
+
+                                        Select mode
+
+                                    </option>
+
+
+                                    <option value="On-site">
+
+                                        On-site
+
+                                    </option>
+
+
+                                    <option value="Remote">
+
+                                        Remote
+
+                                    </option>
+
+
+                                    <option value="Hybrid">
+
+                                        Hybrid
+
+                                    </option>
+
+
+                                    <option value="Any">
+
+                                        Any
+
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- =================================================
+                             LOCATION
+                        ================================================== -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Preferred Internship Location
+
+                            </label>
+
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+
+                                    <i class="bi bi-geo-alt"></i>
+
+                                </span>
+
+
+                                <select
+                                    id="location"
+                                    class="form-select"
+                                    required>
+
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled>
+
+                                        Select preferred location
+
+                                    </option>
+
+
+                                    <option value="Pune">
+
+                                        Pune
+
+                                    </option>
+
+
+                                    <option value="Mumbai">
+
+                                        Mumbai
+
+                                    </option>
+
+
+                                    <option value="Navi Mumbai">
+
+                                        Navi Mumbai
+
+                                    </option>
+
+
+                                    <option value="Thane">
+
+                                        Thane
+
+                                    </option>
+
+
+                                    <option value="Bengaluru">
+
+                                        Bengaluru
+
+                                    </option>
+
+
+                                    <option value="Hyderabad">
+
+                                        Hyderabad
+
+                                    </option>
+
+
+                                    <option value="Delhi NCR">
+
+                                        Delhi NCR
+
+                                    </option>
+
+
+                                    <option value="Chennai">
+
+                                        Chennai
+
+                                    </option>
+
+
+                                    <option value="Any Location">
+
+                                        Any Location
+
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             SKILLS
+                        ================================================== -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Primary Skills
+
+                            </label>
+
+
+                            <div class="input-group">
+
+                                <span class="input-group-text">
+
+                                    <i class="bi bi-code-slash"></i>
+
+                                </span>
+
+
+                                <input
+                                    type="text"
+                                    id="skills"
+                                    class="form-control"
+                                    placeholder="e.g. Python, Java, HTML, SQL">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             PASSWORD
+                        ================================================== -->
+
+                        <div class="row">
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+
+                                    Password
+
+                                </label>
+
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+
+                                        <i class="bi bi-lock"></i>
+
+                                    </span>
+
+
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        class="form-control"
+                                        placeholder="Create password"
+                                        required>
+
+
+                                    <button
+                                        type="button"
+                                        class="input-group-text password-toggle"
+                                        onclick="togglePassword('password', this)">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+
+                                    Confirm Password
+
+                                </label>
+
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+
+                                        <i class="bi bi-lock-fill"></i>
+
+                                    </span>
+
+
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        class="form-control"
+                                        placeholder="Confirm password"
+                                        required>
+
+
+                                    <button
+                                        type="button"
+                                        class="input-group-text password-toggle"
+                                        onclick="togglePassword('confirmPassword', this)">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             TERMS
+                        ================================================== -->
+
+                        <div class="terms">
+
+                            <input
+                                type="checkbox"
+                                id="terms">
+
+
+                            <label for="terms">
+
+                                I agree to the
+
+                                <a href="#">
+                                    Terms & Conditions
+                                </a>
+
+                                and
+
+                                <a href="#">
+                                    Privacy Policy
+                                </a>.
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             REGISTER BUTTON
+                        ================================================== -->
+                        
+                        <button
+                            type="button"
+                            class="register-btn"
+                            onclick="registerStudent()">
+
+                            Create Student Account
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+                   
+
+                        <!-- SUCCESS -->
+
+                        <div
+                            id="successMessage"
+                            class="message success-message">
+
+                            <i class="bi bi-check-circle-fill me-2"></i>
+
+                            Student account created successfully!
+
+                        </div>
+
+
+                        <!-- ERROR -->
+
+                        <div
+                            id="errorMessage"
+                            class="message error-message">
+
+                            <i class="bi bi-exclamation-circle-fill me-2"></i>
+
+                            Please complete all required fields.
+
+                        </div>
+
+
+                        <!-- LOGIN -->
+
+                        <div class="login-link">
+
+                            Already have an account?
+
+                            <a href="loginpage.html">
+
+                                Sign in
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+    /* ==========================================
+       PASSWORD VISIBILITY
+    =========================================== */
+
+    function togglePassword(fieldId, button) {
+
+        const field =
+            document.getElementById(fieldId);
+
+        const icon =
+            button.querySelector("i");
+
+
+        if (field.type === "password") {
+
+            field.type = "text";
+
+            icon.classList.remove("bi-eye");
+
+            icon.classList.add("bi-eye-slash");
+
+        }
+
+        else {
+
+            field.type = "password";
+
+            icon.classList.remove("bi-eye-slash");
+
+            icon.classList.add("bi-eye");
+
+        }
+
+    }
+
+
+
+    /* ==========================================
+       STUDENT REGISTRATION VALIDATION
+    =========================================== */
+
+   async function registerStudent() {
+
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const college = document.getElementById("college").value.trim();
+    const course = document.getElementById("course").value;
+    const year = document.getElementById("year").value;
+    const specialization = document.getElementById("specialization").value;
+    const internshipMode = document.getElementById("internshipMode").value;
+    const location = document.getElementById("location").value;
+    const skills = document.getElementById("skills").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const terms = document.getElementById("terms").checked;
+
+    const success = document.getElementById("successMessage");
+    const error = document.getElementById("errorMessage");
+
+    success.style.display = "none";
+    error.style.display = "none";
+
+    if (
+        firstName === "" ||
+        lastName === "" ||
+        email === "" ||
+        phone === "" ||
+        college === "" ||
+        course === "" ||
+        year === "" ||
+        specialization === "" ||
+        internshipMode === "" ||
+        location === "" ||
+        password === "" ||
+        confirmPassword === "" ||
+        !terms
+    ) {
+        error.innerHTML =
+            '<i class="bi bi-exclamation-circle-fill me-2"></i>' +
+            'Please complete all required fields.';
+        error.style.display = "block";
+        return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+        error.innerHTML =
+            '<i class="bi bi-exclamation-circle-fill me-2"></i>' +
+            'Please enter a valid email address.';
+        error.style.display = "block";
+        return;
+    }
+
+    const phonePattern = /^[0-9]{10}$/;
+
+    if (!phonePattern.test(phone)) {
+        error.innerHTML =
+            '<i class="bi bi-exclamation-circle-fill me-2"></i>' +
+            'Please enter a valid 10-digit mobile number.';
+        error.style.display = "block";
+        return;
+    }
+
+    if (password.length < 8) {
+        error.innerHTML =
+            '<i class="bi bi-exclamation-circle-fill me-2"></i>' +
+            'Password must contain at least 8 characters.';
+        error.style.display = "block";
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        error.innerHTML =
+            '<i class="bi bi-exclamation-circle-fill me-2"></i>' +
+            'Passwords do not match.';
+        error.style.display = "block";
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            "/api/students/register",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    firstName,
+                    lastName,
+                    email,
+                    phone,
+                    college,
+                    course,
+                    year,
+                    specialization,
+                    internshipMode,
+                    location,
+                    skills,
+                    password
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            error.innerHTML =
+                '<i class="bi bi-exclamation-circle-fill me-2"></i>' +
+                data.message;
+            error.style.display = "block";
+            return;
+        }
+
+        success.innerHTML =
+            '<i class="bi bi-check-circle-fill me-2"></i>' +
+            data.message;
+
+        success.style.display = "block";
+
+    } catch (err) {
+
+        console.error("Registration error:", err);
+
+        error.innerHTML =
+            '<i class="bi bi-exclamation-circle-fill me-2"></i>' +
+            'Unable to connect to the backend server.';
+        error.style.display = "block";
+    }
+}
+
+</script>
+
+
+</body>
+
+</html>

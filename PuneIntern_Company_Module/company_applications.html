@@ -1,0 +1,943 @@
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>PuneIntern | Applications</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Company CSS -->
+    <link
+        rel="stylesheet"
+        href="company.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="brand">
+            Pune<span>Intern</span>
+        </div>
+
+
+        <div class="company-mini">
+
+            <div class="company-avatar">
+                TN
+            </div>
+
+            <div>
+
+                <h6>
+                    TechNova Solutions
+                </h6>
+
+                <small>
+                    Company Account
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="company_dashboard.html">
+
+                <i class="bi bi-grid-1x2-fill"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="company_post_internship.html">
+
+                <i class="bi bi-plus-square"></i>
+
+                Post Internship
+
+            </a>
+
+
+            <a href="company_internships.html">
+
+                <i class="bi bi-briefcase"></i>
+
+                My Internships
+
+            </a>
+
+
+            <a
+                href="company_applications.html"
+                class="active"
+            >
+
+                <i class="bi bi-file-earmark-person"></i>
+
+                Applications
+
+            </a>
+
+
+            <a href="company_shortlisted.html">
+
+                <i class="bi bi-star"></i>
+
+                Shortlisted
+
+            </a>
+
+
+            <a href="company_interviews.html">
+
+                <i class="bi bi-calendar2-check"></i>
+
+                Interviews
+
+            </a>
+
+
+            <a href="company_hired.html">
+
+                <i class="bi bi-person-check"></i>
+
+                Hired Interns
+
+            </a>
+
+
+            <a href="company_profile.html">
+
+                <i class="bi bi-building"></i>
+
+                Company Profile
+
+            </a>
+
+
+            <a href="company_settings.html">
+
+                <i class="bi bi-gear"></i>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+
+        <div class="logout-link">
+
+            <a href="company_login.html">
+
+                <i class="bi bi-box-arrow-left"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div></div>
+
+
+            <div class="d-flex align-items-center gap-3">
+
+                <button class="notification">
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="dot"></span>
+
+                </button>
+
+
+                <div class="d-none d-md-block">
+
+                    <strong>
+                        TechNova Solutions
+                    </strong>
+
+                    <small class="text-muted d-block">
+                        Company Portal
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             PAGE CONTENT
+        ========================== -->
+
+        <section class="content">
+
+
+            <div class="page-title mb-4">
+
+                <h2>
+                    Applications
+                </h2>
+
+                <p>
+                    Review candidates and move them through your hiring pipeline.
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 FILTERS
+            ========================== -->
+
+            <div class="filter-box mb-4">
+
+                <div class="row g-2">
+
+
+                    <div class="col-lg-5">
+
+                        <input
+                            id="q"
+                            class="form-control"
+                            placeholder="Search candidate, internship or skill"
+                        >
+
+                    </div>
+
+
+                    <div class="col-md-4 col-lg-2">
+
+                        <select
+                            id="status"
+                            class="form-select"
+                        >
+
+                            <option value="">
+                                All Status
+                            </option>
+
+                            <option value="Applied">
+                                Applied
+                            </option>
+
+                            <option value="Under Review">
+                                Under Review
+                            </option>
+
+                            <option value="Shortlisted">
+                                Shortlisted
+                            </option>
+
+                            <option value="Interview">
+                                Interview
+                            </option>
+
+                            <option value="Selected">
+                                Selected
+                            </option>
+
+                            <option value="Rejected">
+                                Rejected
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="col-md-4 col-lg-3">
+
+                        <select
+                            id="internship"
+                            class="form-select"
+                        >
+
+                            <option value="">
+                                All Internships
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="col-md-4 col-lg-2">
+
+                        <select
+                            id="sort"
+                            class="form-select"
+                        >
+
+                            <option value="newest">
+                                Newest First
+                            </option>
+
+                            <option value="oldest">
+                                Oldest First
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 APPLICATION TABLE
+            ========================== -->
+
+            <div class="card">
+
+
+                <div class="card-head">
+
+                    <h5>
+                        Candidate Applications
+                    </h5>
+
+
+                    <span
+                        id="count"
+                        class="small text-muted"
+                    ></span>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="table mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Candidate
+                                </th>
+
+                                <th>
+                                    Internship
+                                </th>
+
+                                <th>
+                                    Skills
+                                </th>
+
+                                <th>
+                                    Applied
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="rows">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        // =========================
+        // MOBILE MENU
+        // =========================
+
+        document
+            .getElementById("mobileMenu")
+            .onclick = () => {
+
+                document
+                    .getElementById("sidebar")
+                    .classList
+                    .toggle("show");
+
+            };
+
+
+
+        // =========================
+        // VARIABLES
+        // =========================
+
+        let apps = [];
+
+
+
+        // =========================
+        // LOAD APPLICATIONS
+        // =========================
+
+        async function loadApplications() {
+
+            try {
+
+                const response = await fetch(
+                    "/api/company/applications"
+                );
+
+
+                const data =
+                    await response.json();
+
+
+                if (data.success) {
+
+                    apps = data.applications;
+
+                    populateInternshipFilter();
+
+                    render();
+
+                } else {
+
+                    alert(
+                        data.message ||
+                        "Unable to load applications."
+                    );
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Load applications error:",
+                    error
+                );
+
+
+                alert(
+                    "Unable to connect to backend."
+                );
+
+            }
+
+        }
+
+
+
+        // =========================
+        // INTERNSHIP FILTER
+        // =========================
+
+        function populateInternshipFilter() {
+
+            const select =
+                document.getElementById("internship");
+
+
+            const titles =
+                [
+                    ...new Set(
+                        apps.map(
+                            app => app.internship_title
+                        )
+                    )
+                ];
+
+
+            select.innerHTML = `
+                <option value="">
+                    All Internships
+                </option>
+            `;
+
+
+            titles.forEach(title => {
+
+                select.innerHTML += `
+                    <option value="${title}">
+                        ${title}
+                    </option>
+                `;
+
+            });
+
+        }
+
+
+
+        // =========================
+        // RENDER APPLICATIONS
+        // =========================
+
+        function render() {
+
+            const searchText =
+                document
+                    .getElementById("q")
+                    .value
+                    .toLowerCase();
+
+
+            const selectedStatus =
+                document
+                    .getElementById("status")
+                    .value;
+
+
+            const selectedInternship =
+                document
+                    .getElementById("internship")
+                    .value;
+
+
+            const selectedSort =
+                document
+                    .getElementById("sort")
+                    .value;
+
+
+            let filtered =
+                apps.filter(app => {
+
+                    const searchData = [
+
+                        app.first_name,
+
+                        app.last_name,
+
+                        app.internship_title,
+
+                        app.skills,
+
+                        app.email
+
+                    ]
+                        .join(" ")
+                        .toLowerCase();
+
+
+                    return (
+
+                        (
+                            !searchText ||
+                            searchData.includes(searchText)
+                        )
+
+                        &&
+
+                        (
+                            !selectedStatus ||
+                            app.status === selectedStatus
+                        )
+
+                        &&
+
+                        (
+                            !selectedInternship ||
+                            app.internship_title === selectedInternship
+                        )
+
+                    );
+
+                });
+
+
+
+            // =========================
+            // SORT
+            // =========================
+
+            filtered.sort(
+                (a, b) => {
+
+                    const dateA =
+                        new Date(a.applied_at);
+
+                    const dateB =
+                        new Date(b.applied_at);
+
+
+                    return selectedSort === "oldest"
+
+                        ? dateA - dateB
+
+                        : dateB - dateA;
+
+                }
+            );
+
+
+
+            // =========================
+            // COUNT
+            // =========================
+
+            document
+                .getElementById("count")
+                .textContent =
+                filtered.length +
+                " applications";
+
+
+
+            // =========================
+            // EMPTY STATE
+            // =========================
+
+            if (filtered.length === 0) {
+
+                document
+                    .getElementById("rows")
+                    .innerHTML = `
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="text-center py-5 text-muted"
+                            >
+
+                                No applications found.
+
+                            </td>
+
+                        </tr>
+
+                    `;
+
+                return;
+
+            }
+
+
+
+            // =========================
+            // APPLICATION ROWS
+            // =========================
+
+            document
+                .getElementById("rows")
+                .innerHTML =
+
+                filtered.map(app => {
+
+
+                    const fullName =
+                        `${app.first_name} ${app.last_name}`;
+
+
+                    const initial =
+                        app.first_name
+                            ? app.first_name
+                                .charAt(0)
+                                .toUpperCase()
+                            : "?";
+
+
+                    const appliedDate =
+                        new Date(
+                            app.applied_at
+                        ).toLocaleDateString(
+                            "en-IN",
+                            {
+                                day: "2-digit",
+                                month: "short",
+                                year: "numeric"
+                            }
+                        );
+
+
+                    let statusClass =
+                        "status-orange";
+
+
+                    if (
+                        app.status === "Shortlisted" ||
+                        app.status === "Selected"
+                    ) {
+
+                        statusClass =
+                            "status-green";
+
+                    }
+
+
+                    if (
+                        app.status === "Rejected"
+                    ) {
+
+                        statusClass =
+                            "status-wine";
+
+                    }
+
+
+                    if (
+                        app.status === "Interview"
+                    ) {
+
+                        statusClass =
+                            "status-navy";
+
+                    }
+
+
+                    return `
+
+                        <tr>
+
+                            <td>
+
+                                <span class="avatar me-2">
+
+                                    ${initial}
+
+                                </span>
+
+                                <strong>
+
+                                    ${fullName}
+
+                                </strong>
+
+                            </td>
+
+
+                            <td>
+
+                                ${app.internship_title}
+
+                            </td>
+
+
+                            <td class="small">
+
+                                ${app.skills || "Not provided"}
+
+                            </td>
+
+
+                            <td class="small">
+
+                                ${appliedDate}
+
+                            </td>
+
+
+                            <td>
+
+                                <span
+                                    class="status ${statusClass}"
+                                >
+
+                                    ${app.status}
+
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <button
+                                    class="btn btn-sm btn-outline-secondary"
+                                    onclick="reviewApplication(${app.id})"
+                                >
+
+                                    Review
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    `;
+
+                })
+                .join("");
+
+        }
+
+
+
+        // =========================
+        // REVIEW BUTTON
+        // =========================
+
+        function reviewApplication(id) {
+
+            const application =
+                apps.find(
+                    app => app.id === id
+                );
+
+
+            if (!application) {
+
+                return;
+
+            }
+
+
+            alert(
+                "Candidate: " +
+                application.first_name +
+                " " +
+                application.last_name +
+                "\nInternship: " +
+                application.internship_title +
+                "\nStatus: " +
+                application.status
+            );
+
+        }
+
+
+
+        // =========================
+        // FILTER EVENTS
+        // =========================
+
+        document
+            .getElementById("q")
+            .addEventListener(
+                "input",
+                render
+            );
+
+
+        document
+            .getElementById("status")
+            .addEventListener(
+                "change",
+                render
+            );
+
+
+        document
+            .getElementById("internship")
+            .addEventListener(
+                "change",
+                render
+            );
+
+
+        document
+            .getElementById("sort")
+            .addEventListener(
+                "change",
+                render
+            );
+
+
+
+        // =========================
+        // START
+        // =========================
+
+        loadApplications();
+
+
+    </script>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+
+</body>
+
+</html>
+```
