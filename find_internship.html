@@ -1121,7 +1121,7 @@
     <div class="container">
 
         <a class="navbar-brand d-flex align-items-center gap-2"
-           href="internships.html">
+           href="find_intership.html">
 
             <span class="brand-icon">
 
@@ -1164,7 +1164,7 @@
                 <li class="nav-item">
 
                     <a class="nav-link active"
-                       href="internships.html">
+                       href="find_intership.html">
 
                         <i class="bi bi-search me-1"></i>
 
@@ -3202,70 +3202,40 @@
             );
 
 
-       if (!studentId) {
+        if (!studentId) {
 
-    const loggedInStudent =
-        localStorage.getItem(
-            "loggedInStudent"
-        );
-
-    if (loggedInStudent) {
-
-        try {
-
-            const parsedStudent =
-                JSON.parse(loggedInStudent);
-
-            studentId =
-                parsedStudent.id ||
-                parsedStudent.studentId;
-
-        }
-
-        catch (error) {
-
-            console.log(
-                "Logged-in student parsing failed."
-            );
-
-        }
-
-    }
-
-}
+            const student =
+                localStorage.getItem(
+                    "student"
+                );
 
 
-if (!studentId) {
+            if (student) {
 
-    const student =
-        localStorage.getItem(
-            "student"
-        );
+                try {
 
-    if (student) {
+                    const parsedStudent =
+                        JSON.parse(student);
 
-        try {
 
-            const parsedStudent =
-                JSON.parse(student);
+                    studentId =
+                        parsedStudent.id ||
+                        parsedStudent.studentId;
 
-            studentId =
-                parsedStudent.id ||
-                parsedStudent.studentId;
+                }
+
+                catch (error) {
+
+                    console.log(
+                        "Student localStorage parsing failed."
+                    );
+
+                }
+
+            }
 
         }
 
-        catch (error) {
-
-            console.log(
-                "Student localStorage parsing failed."
-            );
-
-        }
-
-    }
-
-}
 
         if (!studentId) {
 

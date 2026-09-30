@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: internhub-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: internhub.duckdns.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: puneintern-frontend
+                port:
+                  number: 80
